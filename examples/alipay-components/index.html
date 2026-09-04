@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>小程序首页与落地页设计原型</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <style>
+    body { background: #f4f5f7; }
+    .hub { width: min(100% - 32px, 860px); margin: 0 auto; padding: 72px 0; }
+    .hub__eyebrow { color: #68717d; font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    .hub h1 { max-width: 620px; margin-top: 10px; font-size: clamp(32px, 6vw, 56px); line-height: 1.06; letter-spacing: -.04em; }
+    .hub__lead { max-width: 680px; margin-top: 18px; color: #626b76; font-size: 16px; line-height: 1.75; }
+    .hub__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 40px; }
+    .hub-card { min-height: 160px; padding: 22px; background: #fff; border: 1px solid #e6e8ec; border-radius: 16px; box-shadow: 0 16px 40px rgba(25, 34, 48, .06); }
+    .hub-card small { color: #858d98; font-size: 11px; font-weight: 700; letter-spacing: .08em; }
+    .hub-card h2 { margin-top: 28px; font-size: 21px; }
+    .hub-card p { margin-top: 7px; color: #6f7782; font-size: 13px; line-height: 1.55; }
+    .hub__note { margin-top: 28px; color: #7a828c; font-size: 13px; line-height: 1.7; }
+    @media (max-width: 620px) { .hub { padding: 40px 0; } .hub__grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="hub">
+    <div class="hub__eyebrow">Tuan Tuan Rental · Design Reference</div>
+    <h1>小程序首页与落地页设计原型</h1>
+    <p class="hub__lead">从当前支付宝小程序源码及生产正常态数据提取。以 375px 移动画布为基准，所有页面均为无框架、无接口、无需构建的离线 HTML/CSS 案例。</p>
+    <div class="hub__grid">
+      <a class="hub-card" href="pages/home.html"><small>FULL PAGE 01</small><h2>完整首页</h2><p>搜索、活动、分类、运营图、商品瀑布流和 TabBar 的完整组合。</p></a>
+      <a class="hub-card" href="pages/landing.html"><small>FULL PAGE 02</small><h2>完整落地页</h2><p>当前演唱会活动视觉与七类落地模块的正常态组合。</p></a>
+      <a class="hub-card" href="components/home.html"><small>COMPONENTS 01</small><h2>首页组件</h2><p>八组可单独观察和复制的首页视觉组件。</p></a>
+      <a class="hub-card" href="components/landing.html"><small>COMPONENTS 02</small><h2>落地页组件</h2><p>HERO、广告、标题、优惠券、商品、按钮和间距七类模块。</p></a>
+    </div>
+    <p class="hub__note">直接双击本文件即可浏览。具体源码映射、尺寸规则和素材来源见 README.md 与 assets/sources.json。</p>
+  </main>
+</body>
+</html>

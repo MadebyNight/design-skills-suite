@@ -1,0 +1,32 @@
+# 依赖与构建产物
+node_modules/
+packages/openphoto/dist/
+
+# 测试产物
+test-results/
+playwright-report/
+
+# 临时产物
+*.log
+.DS_Store
+*.tmp
+.tmp/
+*.swp
+
+# 运行时数据目录
+packages/openphoto/skill/openphoto/.openphoto/
+
+# >>> SyberMem >>>
+# SyberMem machine-local runtime, scripts, and hook wiring (not shareable memory).
+/.sybermem/hooks/
+/.sybermem/.recall-debug.jsonl
+/.sybermem/.recall-outcomes.jsonl
+/.sybermem/.memory-usage.jsonl
+/.sybermem/.auto-trail.jsonl
+/.sybermem/.nudge-state.json
+/.sybermem/.opencode-nudge-state.json
+/.sybermem/.record-intent.json
+/.sybermem/.auto-change-state.json
+/.sybermem/.codex-compact-marker.json
+/.claude/settings.json
+# <<< SyberMem <<<

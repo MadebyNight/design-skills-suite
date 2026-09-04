@@ -1,0 +1,20 @@
+{
+  "schema": "research-pack.schema.json",
+  "fixture": {
+    "queries": ["暑期促销 首页设计 趋势"],
+    "sources": [
+      {
+        "url": "https://example.com/trend",
+        "title": "2026 暑期促销设计趋势",
+        "snippet": "清新色调和卡片式布局成为主流。"
+      }
+    ],
+    "signals": [
+      { "kind": "visual", "value": "卡片式布局", "sourceRefs": ["https://example.com/trend"] },
+      { "kind": "color", "value": "清新蓝绿渐变", "sourceRefs": ["https://example.com/trend"] }
+    ],
+    "adoptedElements": [
+      { "element": "卡片式布局", "reason": "符合现有组件能力", "sourceRefs": ["https://example.com/trend"] }
+    ]
+  }
+}

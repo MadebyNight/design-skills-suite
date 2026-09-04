@@ -1,0 +1,23 @@
+{
+  "schema": "asset-request.schema.json",
+  "fixture": {
+    "id": "asset-req-bad-102",
+    "usageSlot": "home.carousel.item-01.image",
+    "theme": "横幅",
+    "targetWidth": 1404,
+    "targetHeight": 600,
+    "aspectRatio": "1404:600",
+    "format": "png",
+    "fit": "cover",
+    "safeArea": "中央安全区",
+    "referenceImages": [],
+    "forbiddenContent": [],
+    "allowGenerate": true,
+    "allowEdit": true,
+    "acceptance": {
+      "mode": "aspect-ratio",
+      "maxAspectRatioError": -0.01
+    }
+  },
+  "note": "maxAspectRatioError 为负（abs() 语义下恒通过），必须拒绝"
+}

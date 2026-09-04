@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1",
+  "id": "skill-alipay-landing",
+  "version": "0.1.0",
+  "name": "支付宝落地页设计 Skill",
+  "description": "接收公共 DesignBrief（deliverableType 必须为 alipay.landing），只消费 landing catalog，受控组装输出完整 DesignPackage；缺图槽位输出合法 AssetRequest。",
+  "entrypoint": "bin/landing-design.mjs",
+  "inputSchema": "design-brief.schema.json",
+  "outputSchema": "design-package.schema.json",
+  "provides": ["page.alipay.landing.design"],
+  "requires": [],
+  "automatic": true,
+  "confirmationPoints": [],
+  "verifyCommand": "landing-design capabilities"
+}

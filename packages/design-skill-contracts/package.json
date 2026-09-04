@@ -1,0 +1,14 @@
+{
+  "name": "design-skill-contracts",
+  "private": true,
+  "version": "0.1.0",
+  "description": "设计 Agent Skill 公共合同：JSON Schema、fixtures 与最小验证器。首版为独立 Node package。",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "test": "node --test tests/schemas.test.mjs"
+  }
+}

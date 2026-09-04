@@ -1,0 +1,12 @@
+{
+  "schema": "capability-manifest.schema.json",
+  "fixture": {
+    "id": "image.generate",
+    "version": "1.0.0",
+    "inputSchema": "asset-request.schema.json",
+    "outputSchema": "asset-result.schema.json",
+    "automatic": true,
+    "priority": 10,
+    "availabilityCommand": "image-generate capabilities"
+  }
+}

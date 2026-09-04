@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1",
+  "id": "openphoto",
+  "version": "0.1.0",
+  "name": "OpenPhoto",
+  "description": "通过现有 openphoto/v1 提供确定性图片编辑；公共映射为 image.crop -> canvas.crop、image.resize -> canvas.resize、image.export -> document.renderArtifact。",
+  "entrypoint": "bin/openphoto.mjs",
+  "inputSchema": "openphoto/v1",
+  "outputSchema": "openphoto/v1",
+  "provides": [
+    "image.crop",
+    "image.resize",
+    "image.export"
+  ],
+  "requires": [],
+  "automatic": true,
+  "confirmationPoints": [],
+  "verifyCommand": "node bin/openphoto.mjs capabilities"
+}

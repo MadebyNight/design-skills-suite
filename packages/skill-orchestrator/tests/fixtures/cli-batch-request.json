@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "1",
+  "batchId": "cli-batch-1",
+  "items": [
+    {
+      "itemId": "home",
+      "brief": {
+        "id": "brief-home",
+        "goal": "为暑期相机租赁设计支付宝首页",
+        "deliverableType": "alipay.home",
+        "audience": "25-35 岁城市年轻用户",
+        "brandConstraints": ["只使用现有组件"],
+        "contentRequirements": ["搜索相机和手机", "精选活动设备"],
+        "visualConstraints": ["信息清晰"],
+        "outputSpec": { "width": 375, "height": 812, "format": "png" },
+        "inputArtifacts": [],
+        "researchPolicy": "none",
+        "forbiddenChanges": []
+      },
+      "assetPolicy": { "default": { "source": "reuse", "requirement": "optional" }, "rules": [] }
+    },
+    {
+      "itemId": "landing",
+      "brief": {
+        "id": "brief-landing",
+        "goal": "为演唱会设备租赁设计支付宝落地页",
+        "deliverableType": "alipay.landing",
+        "audience": "25-35 岁城市年轻用户",
+        "brandConstraints": ["只使用现有组件"],
+        "contentRequirements": ["精选活动设备"],
+        "visualConstraints": ["信息清晰"],
+        "outputSpec": { "width": 375, "height": 812, "format": "png" },
+        "inputArtifacts": [],
+        "researchPolicy": "none",
+        "forbiddenChanges": []
+      },
+      "assetPolicy": { "default": { "source": "reuse", "requirement": "optional" }, "rules": [] }
+    }
+  ]
+}

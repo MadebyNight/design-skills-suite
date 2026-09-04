@@ -1,0 +1,21 @@
+{
+  "schema": "asset-policy.schema.json",
+  "fixture": {
+    "default": {
+      "source": "generate",
+      "requirement": "required"
+    },
+    "rules": [
+      {
+        "usageSlot": "home.hero.image",
+        "source": "reuse",
+        "requirement": "optional"
+      },
+      {
+        "usageSlot": "home.banner*",
+        "source": "generate",
+        "requirement": "required"
+      }
+    ]
+  }
+}

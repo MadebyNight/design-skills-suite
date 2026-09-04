@@ -1,0 +1,7 @@
+{
+  "schema": "asset-policy.schema.json",
+  "fixture": {
+    "rules": []
+  },
+  "note": "缺少必填字段 default"
+}

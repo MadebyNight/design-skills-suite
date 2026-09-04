@@ -1,0 +1,53 @@
+{
+  "taskId": "golden-01",
+  "title": "纯生图：生成指定主题和比例的图片",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/asset-request.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/asset-result.schema.json"
+  ],
+  "input": {
+    "schema": "asset-request.schema.json",
+    "brief": {
+      "id": "golden-01-asset-req",
+      "usageSlot": "standalone",
+      "theme": "一只绿色蜥蜴猫在阳光下的公园草地上",
+      "targetWidth": 1920,
+      "targetHeight": 380,
+      "aspectRatio": "1920:380",
+      "format": "png",
+      "fit": "cover",
+      "safeArea": "主体居中的横幅构图",
+      "referenceImages": [],
+      "forbiddenContent": ["文字水印", "品牌 logo"],
+      "allowGenerate": true,
+      "allowEdit": true
+    }
+  },
+  "requiredCapabilities": ["image.generate"],
+  "expectedArtifacts": [
+    {
+      "kind": "asset-result",
+      "schema": "asset-result.schema.json",
+      "count": 1,
+      "pathPattern": "*.png"
+    }
+  ],
+  "strongAssertions": [
+    "输出为合法 AssetResult，通过 asset-result.schema.json 校验",
+    "mimeType 为 image/png",
+    "sha256 为 64 位小写十六进制且非全零",
+    "sourceSkill 与 sourceSkillVersion 非空",
+    "width/height 为正整数",
+    "strictSizeSatisfied 反映实际是否满足目标尺寸"
+  ],
+  "allowedDifferences": [
+    "像素内容可不同，不要求与参考图一致",
+    "生成图片的实际宽高可以不等于 1920×380",
+    "sourceSkill 的具体实现可替换"
+  ],
+  "failurePolicy": {
+    "type": "generation",
+    "onApiKeyMissing": "返回稳定错误并说明缺失 API key",
+    "onProviderError": "返回失败步骤，不伪造成功"
+  }
+}

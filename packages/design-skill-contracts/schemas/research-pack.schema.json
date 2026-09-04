@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/research-pack.schema.json",
+  "title": "ResearchPack",
+  "schemaVersion": "1.0.0",
+  "description": "研究信号包：只提供可追溯的搜索信号，不提供新的组件或样式实现。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "queries",
+    "sources",
+    "signals",
+    "adoptedElements"
+  ],
+  "properties": {
+    "queries": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/signal"
+      }
+    },
+    "adoptedElements": {
+      "description": "被最终方案采纳的元素及原因。",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["element", "reason", "sourceRefs"],
+        "properties": {
+          "element": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "sourceRefs": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "title", "snippet"],
+      "properties": {
+        "url": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "snippet": { "type": "string", "minLength": 1 }
+      }
+    },
+    "signal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "value", "sourceRefs"],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": ["visual", "color", "layout", "content"]
+        },
+        "value": { "type": "string", "minLength": 1 },
+        "sourceRefs": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}

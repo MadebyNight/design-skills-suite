@@ -1,0 +1,50 @@
+{
+  "taskId": "golden-03",
+  "title": "OpenPhoto 独立编辑：已有图片裁切、调整和导出",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/asset-result.schema.json"
+  ],
+  "input": {
+    "schema": "asset-request.schema.json",
+    "brief": {
+      "id": "golden-03-asset-req",
+      "usageSlot": "standalone.edit",
+      "theme": "将已有 100×100 图片裁切缩放到 50×50",
+      "targetWidth": 50,
+      "targetHeight": 50,
+      "aspectRatio": "1:1",
+      "format": "png",
+      "fit": "cover",
+      "safeArea": "居中裁切",
+      "referenceImages": [],
+      "forbiddenContent": [],
+      "allowGenerate": false,
+      "allowEdit": true
+    }
+  },
+  "requiredCapabilities": ["image.crop", "image.resize", "image.export"],
+  "expectedArtifacts": [
+    {
+      "kind": "asset-result",
+      "schema": "asset-result.schema.json",
+      "count": 1,
+      "pathPattern": "*.png"
+    }
+  ],
+  "strongAssertions": [
+    "输出为合法 AssetResult，通过 asset-result.schema.json 校验",
+    "width=50 且 height=50，strictSizeSatisfied=true",
+    "sha256 为 64 位小写十六进制且非空",
+    "sourceSkill 记录使用的编辑 Skill ID 与版本",
+    "allowGenerate=false 时不得触发生图"
+  ],
+  "allowedDifferences": [
+    "像素内容保持原图裁切结果，不要求特定内容",
+    "crop/resize 的执行顺序可由实现决定"
+  ],
+  "failurePolicy": {
+    "type": "edit",
+    "onRevisionConflict": "明确失败并说明原因，不静默重试",
+    "onInvalidInput": "返回结构化错误，不崩溃"
+  }
+}

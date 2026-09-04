@@ -1,0 +1,133 @@
+{
+  "sourceCommit": "481946f0fdb515d6f93af82ff7e23d724b2c2b7b",
+  "pageType": "alipay.landing",
+  "components": [
+    {
+      "id": "lp-action",
+      "name": "06 · ACTION_BUTTON / 操作按钮",
+      "domTemplate": "<div class=\"lp-action is-full\"><div class=\"lp-action-button\">返回首页</div></div>",
+      "allowedClasses": [
+        "lp-action",
+        "lp-action-button"
+      ],
+      "allowedVariants": [
+        "is-full"
+      ],
+      "slots": []
+    },
+    {
+      "id": "lp-coupons",
+      "name": "04 · COUPON_GROUP / 优惠券组",
+      "domTemplate": "<div class=\"lp-coupons\"><article class=\"lp-coupon\"><div class=\"lp-coupon-value\"><div class=\"lp-coupon-amount\"><small>¥</small>0.5</div><div class=\"lp-coupon-note\">满1元可用</div></div><div class=\"lp-coupon-copy\"><div class=\"lp-coupon-title\">测试0806</div><div class=\"lp-coupon-action\">立即领取</div></div></article><article class=\"lp-coupon\"><div class=\"lp-coupon-value\"><div class=\"lp-coupon-amount\"><small>¥</small>99.9</div><div class=\"lp-coupon-note\">满100元可用</div></div><div class=\"lp-coupon-copy\"><div class=\"lp-coupon-title\">测试0817</div><div class=\"lp-coupon-action is-disabled\">已抢完</div></div></article></div>",
+      "allowedClasses": [
+        "lp-coupon",
+        "lp-coupon-action",
+        "lp-coupon-amount",
+        "lp-coupon-copy",
+        "lp-coupon-note",
+        "lp-coupon-title",
+        "lp-coupon-value",
+        "lp-coupons"
+      ],
+      "allowedVariants": [
+        "is-disabled"
+      ],
+      "slots": []
+    },
+    {
+      "id": "lp-hero",
+      "name": "01 · HERO_IMAGE / 活动主图",
+      "domTemplate": "<div class=\"lp-hero\"><img class=\"lp-cover-image\" src=\"../assets/landing/hero.png\" alt=\"演唱会租赁活动\"></div>",
+      "allowedClasses": [
+        "lp-cover-image",
+        "lp-hero"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "lp-cover-image",
+          "objectFit": "cover"
+        }
+      ]
+    },
+    {
+      "id": "lp-image-ad",
+      "name": "02 · IMAGE_AD / 图片广告",
+      "domTemplate": "<div class=\"lp-image-ad is-single\"><div class=\"lp-image-ad-item\"><img class=\"lp-cover-image\" src=\"../assets/landing/image-ad.png\" alt=\"运动相机推荐\"></div></div>",
+      "allowedClasses": [
+        "lp-cover-image",
+        "lp-image-ad",
+        "lp-image-ad-item"
+      ],
+      "allowedVariants": [
+        "is-single"
+      ],
+      "slots": [
+        {
+          "type": "image",
+          "name": "lp-cover-image",
+          "objectFit": "cover"
+        }
+      ]
+    },
+    {
+      "id": "lp-products",
+      "name": "05 · PRODUCT_COLLECTION / 商品集合",
+      "domTemplate": "<div class=\"lp-products\"><article class=\"lp-product\"><div class=\"lp-product-image-wrap\"><img class=\"lp-product-image\" src=\"../assets/landing/product-osmo.jpg\" alt=\"大疆口袋相机\"></div><div class=\"lp-product-copy\"><div class=\"lp-product-title\">小胡神器，无限量 token plan</div><div class=\"lp-product-shop\">团团享租</div><div class=\"lp-product-price\"><small>¥</small>0.01<small>/天</small></div></div></article><article class=\"lp-product\"><div class=\"lp-product-image-wrap\"><img class=\"lp-product-image\" src=\"../assets/landing/product-vivo.jpg\" alt=\"vivo X300 Ultra\"></div><div class=\"lp-product-copy\"><div class=\"lp-product-title\">X300 Ultra</div><div class=\"lp-product-shop\">团团享租</div><div class=\"lp-product-price\"><small>¥</small>40<small>/天</small></div></div></article><article class=\"lp-product\"><div class=\"lp-product-image-wrap\"><img class=\"lp-product-image\" src=\"../assets/landing/product-fuji.png\" alt=\"富士拍立得\"></div><div class=\"lp-product-copy\"><div class=\"lp-product-title\">富士 instax wide400</div><div class=\"lp-product-shop\">团团享租</div><div class=\"lp-product-price\"><small>¥</small>2.5<small>/天</small></div></div></article><article class=\"lp-product\"><div class=\"lp-product-image-wrap\"><img class=\"lp-product-image\" src=\"../assets/landing/product-vivo.jpg\" alt=\"vivo 长焦手机\"></div><div class=\"lp-product-copy\"><div class=\"lp-product-title\">X300 Ultra 长焦手机</div><div class=\"lp-product-shop\">团团享租</div><div class=\"lp-product-price\"><small>¥</small>40<small>/天</small></div></div></article></div>",
+      "allowedClasses": [
+        "lp-product",
+        "lp-product-copy",
+        "lp-product-image",
+        "lp-product-image-wrap",
+        "lp-product-price",
+        "lp-product-shop",
+        "lp-product-title",
+        "lp-products"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "lp-product-image",
+          "objectFit": "contain"
+        },
+        {
+          "type": "image",
+          "name": "lp-product-image-2",
+          "objectFit": "contain"
+        },
+        {
+          "type": "image",
+          "name": "lp-product-image-3",
+          "objectFit": "contain"
+        },
+        {
+          "type": "image",
+          "name": "lp-product-image-4",
+          "objectFit": "contain"
+        }
+      ]
+    },
+    {
+      "id": "lp-section-title",
+      "name": "03 · SECTION_TITLE / 区块标题",
+      "domTemplate": "<h2 class=\"lp-section-title\">精选靓机</h2>",
+      "allowedClasses": [
+        "lp-section-title"
+      ],
+      "allowedVariants": [],
+      "slots": []
+    },
+    {
+      "id": "lp-spacer",
+      "name": "07 · SPACER / 12px 分隔留白",
+      "domTemplate": "<div class=\"lp-spacer\"></div>",
+      "allowedClasses": [
+        "lp-spacer"
+      ],
+      "allowedVariants": [],
+      "slots": []
+    }
+  ]
+}

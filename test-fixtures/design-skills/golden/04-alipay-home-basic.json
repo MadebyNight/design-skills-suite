@@ -1,0 +1,65 @@
+{
+  "taskId": "golden-04",
+  "title": "首页基础任务：无搜索，使用现有素材完成首页",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/design-brief.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/design-package.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/component-catalog.schema.json"
+  ],
+  "input": {
+    "schema": "design-brief.schema.json",
+    "brief": {
+      "id": "golden-04-brief",
+      "goal": "为暑期促销设计一个支付宝小程序首页，仅使用现有素材完成",
+      "deliverableType": "alipay.home",
+      "audience": "25-35 岁城市年轻用户",
+      "brandConstraints": ["只允许使用现有首页组件", "禁止新增 class", "禁止内联样式"],
+      "contentRequirements": ["突出暑期优惠", "包含活动入口文案"],
+      "visualConstraints": ["保持清新色调", "信息层级清晰"],
+      "outputSpec": { "width": 375, "height": 812, "format": "png" },
+      "inputArtifacts": [
+        {
+          "assetRequestId": "golden-04-input",
+          "artifactId": "existing-hero",
+          "path": "assets/existing-hero.png",
+          "mimeType": "image/png",
+          "width": 1920,
+          "height": 380,
+          "sha256": "a7230805750d5b6731760b0bb4ed54bb305692369f8bc0059e868e7bf3d06f31",
+          "sourceSkill": "user",
+          "sourceSkillVersion": "0.0.0",
+          "strictSizeSatisfied": true,
+          "notes": ["用户已有素材"]
+        }
+      ],
+      "researchPolicy": "none",
+      "forbiddenChanges": ["修改按钮圆角", "新增组件", "修改 tokens", "引入远程资源"]
+    }
+  },
+  "requiredCapabilities": ["page.alipay.home.design"],
+  "expectedArtifacts": [
+    {
+      "kind": "design-package",
+      "schema": "design-package.schema.json",
+      "count": 1,
+      "pathPattern": "design-package/"
+    }
+  ],
+  "strongAssertions": [
+    "输出合法 DesignPackage，通过 design-package.schema.json 校验",
+    "不使用搜索（researchPolicy=none，无 research-pack.json）",
+    "只消费 home 类型 ComponentCatalog",
+    "所有 class 和 variant 均在白名单内",
+    "无内联样式、无 script、无远程资源",
+    "未使用生图能力，不触发 image.generate"
+  ],
+  "allowedDifferences": [
+    "具体组件组合顺序可在目录约束内变化",
+    "文案内容可由实现填充，但不得越出 contentRequirements"
+  ],
+  "failurePolicy": {
+    "type": "page",
+    "onMissingAsset": "输出结构化 AssetRequest 明确待补素材",
+    "onConstraintViolation": "拒绝并给出现有组件范围内的替代方案"
+  }
+}

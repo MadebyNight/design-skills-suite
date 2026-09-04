@@ -1,0 +1,29 @@
+{
+  "name": "design-skills-suite",
+  "private": true,
+  "version": "0.1.0",
+  "description": "design-skills-suite：支付宝页面设计 Skill 套件（不含生图工作台）。",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "install:all": "npm install && npm --prefix packages/skill-image-generate install && npm --prefix packages/openphoto/skill/openphoto install",
+    "build:openphoto": "node packages/openphoto/scripts/package-skill.mjs --build --replace --install --zip",
+    "build:catalog": "node packages/skill-alipay-pages/scripts/build-catalog.mjs",
+    "test:contracts": "npm --prefix packages/design-skill-contracts test",
+    "test:image": "npm --prefix packages/skill-image-generate test",
+    "test:pages": "npm --prefix packages/skill-alipay-pages test",
+    "test:home": "npm --prefix packages/skill-alipay-home test",
+    "test:landing": "npm --prefix packages/skill-alipay-landing test",
+    "test:orchestrator": "npm --prefix packages/skill-orchestrator test",
+    "batch": "node packages/skill-orchestrator/bin/design-batch.mjs",
+    "test:conformance": "node --test scripts/design-skills/conformance.test.mjs",
+    "test:golden": "node --test scripts/design-skills/golden-evaluator.test.mjs",
+    "test:golden:stability": "node scripts/design-skills/verify-golden-stability.mjs --runs 3",
+    "test:all": "npm run test:contracts && npm run test:image && npm run test:pages && npm run test:home && npm run test:landing && npm run test:orchestrator && npm run test:conformance && npm run test:golden"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.54.0"
+  }
+}

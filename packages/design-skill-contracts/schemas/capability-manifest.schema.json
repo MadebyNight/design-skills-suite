@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/capability-manifest.schema.json",
+  "title": "CapabilityManifest",
+  "schemaVersion": "1.0.0",
+  "description": "能力清单：用稳定 capability ID 表达能力，不表达具体实现名。capability ID 冻结，只允许下列枚举值。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "inputSchema",
+    "outputSchema",
+    "automatic",
+    "priority",
+    "availabilityCommand"
+  ],
+  "properties": {
+    "id": {
+      "description": "冻结的能力 ID。只允许计划中登记的能力，不接受具体实现名。",
+      "type": "string",
+      "enum": [
+        "page.alipay.home.design",
+        "page.alipay.landing.design",
+        "image.generate",
+        "image.crop",
+        "image.resize",
+        "image.export",
+        "research.search",
+        "design.guidance",
+        "workflow.orchestrate"
+      ]
+    },
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inputSchema": {
+      "description": "本能力输入对象的 Schema 引用（绝对 $id 或相对文件名）。",
+      "type": "string",
+      "minLength": 1
+    },
+    "outputSchema": {
+      "description": "本能力输出对象的 Schema 引用（绝对 $id 或相对文件名）。",
+      "type": "string",
+      "minLength": 1
+    },
+    "automatic": {
+      "type": "boolean"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "availabilityCommand": {
+      "description": "探测本能力在当前环境是否可用的命令。",
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

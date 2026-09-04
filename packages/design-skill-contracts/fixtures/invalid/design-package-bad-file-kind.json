@@ -1,0 +1,14 @@
+{
+  "schema": "design-package.schema.json",
+  "fixture": {
+    "packageRoot": "design-package",
+    "designBriefId": "brief-001",
+    "sourceCommit": "abc1234",
+    "files": [
+      { "path": "home-config.json", "kind": "home-config.json" },
+      { "path": "prototype.html", "kind": "prototype.html" },
+      { "path": "config.md", "kind": "custom-config.md" }
+    ]
+  },
+  "note": "kind custom-config-md 非 design-package 枚举值（configuration-guide.md 才是合法 kind）"
+}

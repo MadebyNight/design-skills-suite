@@ -1,0 +1,54 @@
+{
+  "taskId": "golden-02",
+  "title": "生图 + OpenPhoto：绿色蜥蜴猫，最终精确为 1920×380",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/asset-request.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/asset-result.schema.json"
+  ],
+  "input": {
+    "schema": "asset-request.schema.json",
+    "brief": {
+      "id": "golden-02-asset-req",
+      "usageSlot": "home.hero.image",
+      "theme": "绿色蜥蜴猫横幅，最终精确裁切适配为 1920×380",
+      "targetWidth": 1920,
+      "targetHeight": 380,
+      "aspectRatio": "1920:380",
+      "format": "png",
+      "fit": "cover",
+      "safeArea": "主体居中，关键元素在安全区内",
+      "referenceImages": [],
+      "forbiddenContent": ["文字水印", "品牌 logo"],
+      "allowGenerate": true,
+      "allowEdit": true
+    }
+  },
+  "requiredCapabilities": ["image.generate", "image.resize", "image.crop", "image.export"],
+  "expectedArtifacts": [
+    {
+      "kind": "asset-result",
+      "schema": "asset-result.schema.json",
+      "count": 2,
+      "pathPattern": "*.png"
+    }
+  ],
+  "strongAssertions": [
+    "存在两个阶段 AssetResult：生图原始 + 编辑后最终",
+    "最终 AssetResult 的 width=1920 且 height=380",
+    "最终 AssetResult 的 strictSizeSatisfied=true",
+    "最终 sha256 非空且为 64 位小写十六进制",
+    "两个阶段的 sourceSkill 与 sourceSkillVersion 均非空",
+    "最终 AssetResult 通过 asset-result.schema.json 校验"
+  ],
+  "allowedDifferences": [
+    "生图原始图的像素内容可不同",
+    "中间 resize/crop 的先后顺序可由实现决定",
+    "sourceSkill 的具体实现（OpenPhoto 或兼容 Skill）可替换"
+  ],
+  "failurePolicy": {
+    "type": "edit",
+    "onMissingEditCapability": "输出待处理 AssetRequest，明确标注待补的编辑能力",
+    "onRevisionConflict": "明确失败并说明原因，不静默重试",
+    "onSizeMismatch": "strictSizeSatisfied=false 并说明原因"
+  }
+}

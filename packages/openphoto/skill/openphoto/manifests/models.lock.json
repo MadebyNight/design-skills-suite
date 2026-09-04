@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "models": {
+    "Xenova/modnet": {
+      "revision": "fa2fa546052fba4c08921230a26cc69a333fca12",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/Xenova/modnet/tree/fa2fa546052fba4c08921230a26cc69a333fca12",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 83,
+          "sha256": "e144d8af9b1f09649785c77f592a76bbc69504ae02e43700663b2a9f00d9c8a2",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/config.json"
+        },
+        {
+          "path": "onnx/model.onnx",
+          "bytes": 25888640,
+          "sha256": "07c308cf0fc7e6e8b2065a12ed7fc07e1de8febb7dc7839d7b7f15dd66584df9",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/onnx/model.onnx"
+        },
+        {
+          "path": "onnx/model_bnb4.onnx",
+          "bytes": 23080899,
+          "sha256": "acfa94a3b90259d00aed9355be69def816837476307adf59cb5631006946a461",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/onnx/model_bnb4.onnx"
+        },
+        {
+          "path": "onnx/model_fp16.onnx",
+          "bytes": 12984781,
+          "sha256": "25f165da9bfd30830a575f1f0490f1acd995975cb349bc02f3d79332e1fe5cf6",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/onnx/model_fp16.onnx"
+        },
+        {
+          "path": "onnx/model_q4.onnx",
+          "bytes": 23132083,
+          "sha256": "74b7b569f8697e220b82986ca85c2226bec93c67e748276e2cec4e8e742a312a",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/onnx/model_q4.onnx"
+        },
+        {
+          "path": "onnx/model_q4f16.onnx",
+          "bytes": 11801931,
+          "sha256": "f582407530e8c5f2f4adc969d894cce82a2ae3a6b6b0571fe25ebb4c5a8ffa5c",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/onnx/model_q4f16.onnx"
+        },
+        {
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 6632188,
+          "sha256": "92e49898c3e05a6d7a944fc67a8cb87c4aad754ffb6ebd949528c7d1105fee3a",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/onnx/model_quantized.onnx"
+        },
+        {
+          "path": "onnx/model_uint8.onnx",
+          "bytes": 6627048,
+          "sha256": "7bad6522b3cde60246e69e234b7786337ef9c88abc790ee5c1aaa6e535b0c61d",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/onnx/model_uint8.onnx"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 365,
+          "sha256": "07d83634b1fdd20142ca6e3fe55ab92b558f56d1b0f005ff3a7926f1c9e1165d",
+          "url": "https://huggingface.co/Xenova/modnet/resolve/fa2fa546052fba4c08921230a26cc69a333fca12/preprocessor_config.json"
+        }
+      ]
+    },
+    "Xenova/depth-anything-small-hf": {
+      "revision": "2e942621ab9f2371c1df9eb223291b5ac31475e6",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/Xenova/depth-anything-small-hf/tree/2e942621ab9f2371c1df9eb223291b5ac31475e6",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 1020,
+          "sha256": "b5ab35d5107b16a6c1326d232dbb71bbcea6215ae113381f429baae9ab558043",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/config.json"
+        },
+        {
+          "path": "onnx/model.onnx",
+          "bytes": 99170955,
+          "sha256": "c222151fa1a941b7a075efdee44a85bb22e1bc07dce3659a03cb3f4eb53dd213",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/onnx/model.onnx"
+        },
+        {
+          "path": "onnx/model_bnb4.onnx",
+          "bytes": 26236495,
+          "sha256": "2392aba77bd34e7183ae58d3395b9d5dbfaf9eba8da7fc1f71afdcb59b211f65",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/onnx/model_bnb4.onnx"
+        },
+        {
+          "path": "onnx/model_fp16.onnx",
+          "bytes": 49861035,
+          "sha256": "59f445f985c1a46155904f902c253da6c84108a2aa72e0d9a2d2d63e04204570",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/onnx/model_fp16.onnx"
+        },
+        {
+          "path": "onnx/model_q4.onnx",
+          "bytes": 27563143,
+          "sha256": "dfa44107860895b9aa7ac074f55b74427772302a86812f513e8820ffab192bec",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/onnx/model_q4.onnx"
+        },
+        {
+          "path": "onnx/model_q4f16.onnx",
+          "bytes": 20336189,
+          "sha256": "dd2f330c2cf62fd056a0cbf9032f860d62f31f3074826f0d23de3ffa7d3516e4",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/onnx/model_q4f16.onnx"
+        },
+        {
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 27524771,
+          "sha256": "e4e2ffe9b0396ebd4a0c09b855762b186aab338e79f76531b09777aafc91db84",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/onnx/model_quantized.onnx"
+        },
+        {
+          "path": "onnx/model_uint8.onnx",
+          "bytes": 27256285,
+          "sha256": "4c307cbb44117199ec1672d860d845bce111301a0dcbcf05f334f88599480cfd",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/onnx/model_uint8.onnx"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 437,
+          "sha256": "533b16a60445d7cab5086d39b45f92be45624b977972c62d5984d93e98366063",
+          "url": "https://huggingface.co/Xenova/depth-anything-small-hf/resolve/2e942621ab9f2371c1df9eb223291b5ac31475e6/preprocessor_config.json"
+        }
+      ]
+    },
+    "Xenova/detr-resnet-50": {
+      "revision": "8be7ab59ff663484ee9ba2e8d8f267330d5ad03e",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/Xenova/detr-resnet-50/tree/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 4812,
+          "sha256": "2daaf8af0b4fe9d075fd728a6967b89a1084849d1b25de26338f97cd6ef41466",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/config.json"
+        },
+        {
+          "path": "onnx/model.onnx",
+          "bytes": 166789212,
+          "sha256": "5dffb3205e68b0be1686eea283ecf87e7592d3dceed5dfc83249f7303e9e95e8",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/onnx/model.onnx"
+        },
+        {
+          "path": "onnx/model_bnb4.onnx",
+          "bytes": 106776417,
+          "sha256": "8d740c2650087028b10015ba22dda7f075f791056e4db3623804db52306f0201",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/onnx/model_bnb4.onnx"
+        },
+        {
+          "path": "onnx/model_fp16.onnx",
+          "bytes": 83812437,
+          "sha256": "dd346adcf8a9aa59c15d4e4cb884227fa617ea509834229dc33195145bbc4e0e",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/onnx/model_fp16.onnx"
+        },
+        {
+          "path": "onnx/model_q4.onnx",
+          "bytes": 107866715,
+          "sha256": "b41bf93e86686e4247c2a5d684bdce1a88ce9ef5f299038c99677444f870e6a2",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/onnx/model_q4.onnx"
+        },
+        {
+          "path": "onnx/model_q4f16.onnx",
+          "bytes": 58545965,
+          "sha256": "8f26dbd9c4485f160a0a4a93fe3238ad3c8797f9bd8f444e21cf8a6d704817ef",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/onnx/model_q4f16.onnx"
+        },
+        {
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 43102531,
+          "sha256": "cae09a307ed9247da7e2ce8bcf81522a6817f1ea2e82b9c4dde59f5964b62b4f",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/onnx/model_quantized.onnx"
+        },
+        {
+          "path": "onnx/model_uint8.onnx",
+          "bytes": 42680347,
+          "sha256": "5392e8cd0df04c8c33a87d96ca9ad0c9ef2dca9a14d7d75e853823e525261fb3",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/onnx/model_uint8.onnx"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 455,
+          "sha256": "fd7b4c38d03d99e37f75eebba889e064db89fed8fd451139442d010a11f2dc5e",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50/resolve/8be7ab59ff663484ee9ba2e8d8f267330d5ad03e/preprocessor_config.json"
+        }
+      ]
+    },
+    "Xenova/detr-resnet-50-panoptic": {
+      "revision": "ea24b2d4e0bfae31f0a1299ba3fb892a2df064de",
+      "license": "apache-2.0",
+      "source": "https://huggingface.co/Xenova/detr-resnet-50-panoptic/tree/ea24b2d4e0bfae31f0a1299ba3fb892a2df064de",
+      "files": [
+        {
+          "path": "config.json",
+          "bytes": 11834,
+          "sha256": "10f5c1551ee51cce4f18025b364a068784def077f1d29fefab3359c7c0fe909e",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50-panoptic/resolve/ea24b2d4e0bfae31f0a1299ba3fb892a2df064de/config.json"
+        },
+        {
+          "path": "onnx/model.onnx",
+          "bytes": 172282717,
+          "sha256": "f41a80cd659d1ae2e4981f2423955d983d28657d747e965ddc980b7768042de1",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50-panoptic/resolve/ea24b2d4e0bfae31f0a1299ba3fb892a2df064de/onnx/model.onnx"
+        },
+        {
+          "path": "onnx/model_fp16.onnx",
+          "bytes": 86559030,
+          "sha256": "afd9f02d864302d690356fd4bfcb2feed2397a1190bf46a7306cb430464d734a",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50-panoptic/resolve/ea24b2d4e0bfae31f0a1299ba3fb892a2df064de/onnx/model_fp16.onnx"
+        },
+        {
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 44483407,
+          "sha256": "93abfec8b8abd77329f203726b231ee5e5d4c2d52c881a74ab1c1134d888c41d",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50-panoptic/resolve/ea24b2d4e0bfae31f0a1299ba3fb892a2df064de/onnx/model_quantized.onnx"
+        },
+        {
+          "path": "preprocessor_config.json",
+          "bytes": 454,
+          "sha256": "f40c5d0478854be4a19a29f58a80558b43d3055b42b8288742933d130937c55d",
+          "url": "https://huggingface.co/Xenova/detr-resnet-50-panoptic/resolve/ea24b2d4e0bfae31f0a1299ba3fb892a2df064de/preprocessor_config.json"
+        }
+      ]
+    }
+  }
+}

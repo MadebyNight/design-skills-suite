@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "models": {
+    "Xenova/modnet": {
+      "revision": "fixture-modnet",
+      "license": "fixture-license",
+      "source": "__ORIGIN__",
+      "files": [
+        {
+          "path": "modnet.bin",
+          "url": "__ORIGIN__/modnet.bin",
+          "bytes": 0,
+          "sha256": "__SHA256__"
+        }
+      ]
+    },
+    "Xenova/depth-anything-small-hf": {
+      "revision": "fixture-depth",
+      "license": "fixture-license",
+      "source": "__ORIGIN__",
+      "files": [
+        {
+          "path": "depth.bin",
+          "url": "__ORIGIN__/depth.bin",
+          "bytes": 0,
+          "sha256": "__SHA256__"
+        }
+      ]
+    },
+    "Xenova/detr-resnet-50": {
+      "revision": "fixture-detr",
+      "license": "fixture-license",
+      "source": "__ORIGIN__",
+      "files": [
+        {
+          "path": "detr.bin",
+          "url": "__ORIGIN__/detr.bin",
+          "bytes": 0,
+          "sha256": "__SHA256__"
+        }
+      ]
+    },
+    "Xenova/detr-resnet-50-panoptic": {
+      "revision": "fixture-panoptic",
+      "license": "fixture-license",
+      "source": "__ORIGIN__",
+      "files": [
+        {
+          "path": "panoptic.bin",
+          "url": "__ORIGIN__/panoptic.bin",
+          "bytes": 0,
+          "sha256": "__SHA256__"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1",
+  "id": "skill-orchestrator",
+  "version": "0.1.0",
+  "name": "设计 Skill 编排器",
+  "description": "发现并匹配页面、图片和研究 capability，在一次会话内组织结构化交付。",
+  "entrypoint": "runtime/runner.mjs",
+  "inputSchema": "design-brief.schema.json",
+  "outputSchema": "orchestration-result.schema.json",
+  "provides": ["workflow.orchestrate"],
+  "requires": [],
+  "automatic": true,
+  "confirmationPoints": [],
+  "verifyCommand": "npm test"
+}

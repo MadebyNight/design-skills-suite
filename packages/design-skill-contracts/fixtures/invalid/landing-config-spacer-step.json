@@ -1,0 +1,22 @@
+{
+  "schema": "landing-config.schema.json",
+  "fixture": {
+    "schemaVersion": "landing-schema/v1",
+    "page": {
+      "name": "夏日出游租赁",
+      "navTitle": "夏日出游",
+      "background": { "type": "color", "color": "#FFF7E6" },
+      "activityTime": { "startTime": "", "endTime": "" }
+    },
+    "modules": [
+      {
+        "type": "SPACER",
+        "id": "spacer-1",
+        "heightRpx": 10,
+        "background": { "mode": "transparent" }
+      }
+    ],
+    "pendingResourceRequests": []
+  },
+  "note": "SPACER 高度 10rpx 不是 8rpx 步长的倍数"
+}

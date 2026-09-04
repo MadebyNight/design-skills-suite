@@ -1,0 +1,12 @@
+{
+  "schema": "asset-policy.schema.json",
+  "fixture": {
+    "default": {
+      "source": "generate",
+      "requirement": "required"
+    },
+    "rules": [],
+    "unexpectedField": true
+  },
+  "note": "未声明字段 unexpectedField，additionalProperties 应拒绝"
+}

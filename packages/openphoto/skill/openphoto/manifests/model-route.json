@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "transformersVersion": "4.0.0",
+  "localModelPathTemplate": "{origin}/models/",
+  "requestPathTemplate": "/models/{modelId}/{path}",
+  "modelIdEncoding": "path-segments",
+  "observations": {
+    "Xenova/modnet": {
+      "revision": "fa2fa546052fba4c08921230a26cc69a333fca12",
+      "paths": [
+        "/models/Xenova/modnet/config.json",
+        "/models/Xenova/modnet/preprocessor_config.json"
+      ]
+    },
+    "Xenova/depth-anything-small-hf": {
+      "revision": "2e942621ab9f2371c1df9eb223291b5ac31475e6",
+      "paths": [
+        "/models/Xenova/depth-anything-small-hf/config.json",
+        "/models/Xenova/depth-anything-small-hf/preprocessor_config.json"
+      ]
+    },
+    "Xenova/detr-resnet-50": {
+      "revision": "8be7ab59ff663484ee9ba2e8d8f267330d5ad03e",
+      "paths": [
+        "/models/Xenova/detr-resnet-50/config.json",
+        "/models/Xenova/detr-resnet-50/preprocessor_config.json"
+      ]
+    },
+    "Xenova/detr-resnet-50-panoptic": {
+      "revision": "ea24b2d4e0bfae31f0a1299ba3fb892a2df064de",
+      "paths": [
+        "/models/Xenova/detr-resnet-50-panoptic/config.json",
+        "/models/Xenova/detr-resnet-50-panoptic/preprocessor_config.json"
+      ]
+    }
+  }
+}

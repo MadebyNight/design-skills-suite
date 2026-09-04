@@ -1,0 +1,23 @@
+{
+  "schema": "orchestration-result.schema.json",
+  "fixture": {
+    "briefId": "brief-001",
+    "status": "succeeded",
+    "selectedCapabilities": ["page.alipay.home.design", "image.generate", "research.search"],
+    "steps": [
+      { "name": "discover", "capability": "workflow.orchestrate", "status": "succeeded", "details": "发现页面与生图能力" },
+      { "name": "research", "capability": "research.search", "status": "skipped", "details": "研究为 optional，跳过" },
+      { "name": "page", "capability": "page.alipay.home.design", "status": "succeeded", "details": "首页组装完成" }
+    ],
+    "deliverable": {
+      "packageRoot": "design-package/home",
+      "designBriefId": "brief-001",
+      "sourceCommit": "abc1234",
+      "files": [
+        { "path": "prototype.png", "kind": "prototype.png" },
+        { "path": "prototype.html", "kind": "prototype.html" },
+        { "path": "validation-report.json", "kind": "validation-report.json" }
+      ]
+    }
+  }
+}

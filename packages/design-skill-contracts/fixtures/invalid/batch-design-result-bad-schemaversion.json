@@ -1,0 +1,20 @@
+{
+  "schema": "batch-design-result.schema.json",
+  "fixture": {
+    "schemaVersion": 1,
+    "batchId": "batch-2026-08-28.001",
+    "status": "succeeded",
+    "summary": { "total": 1, "succeeded": 1, "failed": 0, "skipped": 0 },
+    "items": [
+      {
+        "itemId": "item.home.001",
+        "status": "succeeded",
+        "attempt": 1,
+        "outputRoot": "out/item.home.001",
+        "resultPath": "out/item.home.001/result.json",
+        "error": null
+      }
+    ]
+  },
+  "note": "schemaVersion 必须为字符串 '1'，数字 1 应被拒绝"
+}

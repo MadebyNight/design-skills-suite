@@ -1,0 +1,14 @@
+{
+  "name": "skill-orchestrator",
+  "private": true,
+  "version": "0.1.0",
+  "description": "设计 Skill 编排 package：C1 最小骨架 Skill 发现器，复用 design-skill-contracts 合同做校验。",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "batch": "node bin/design-batch.mjs"
+  }
+}

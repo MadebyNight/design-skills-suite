@@ -1,0 +1,26 @@
+{
+  "schema": "batch-design-request.schema.json",
+  "fixture": {
+    "schemaVersion": "1",
+    "batchId": "batch-2026-08-28.001",
+    "items": [
+      {
+        "itemId": "item.home.001",
+        "brief": {
+          "id": "brief-001",
+          "goal": "设计一个落地页",
+          "deliverableType": "alipay.landing",
+          "audience": "用户",
+          "brandConstraints": [],
+          "contentRequirements": [],
+          "visualConstraints": [],
+          "outputSpec": { "width": 375, "height": 812 },
+          "inputArtifacts": [],
+          "researchPolicy": "none",
+          "forbiddenChanges": []
+        }
+      }
+    ]
+  },
+  "note": "item 缺少必填字段 assetPolicy"
+}

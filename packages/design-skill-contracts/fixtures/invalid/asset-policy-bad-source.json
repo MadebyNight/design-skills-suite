@@ -1,0 +1,11 @@
+{
+  "schema": "asset-policy.schema.json",
+  "fixture": {
+    "default": {
+      "source": "download",
+      "requirement": "required"
+    },
+    "rules": []
+  },
+  "note": "default.source 非法枚举值"
+}

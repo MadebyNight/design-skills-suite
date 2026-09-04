@@ -1,0 +1,83 @@
+{
+  "schema": "landing-config.schema.json",
+  "fixture": {
+    "schemaVersion": "landing-schema/v1",
+    "page": {
+      "name": "夏日出游租赁",
+      "navTitle": "夏日出游",
+      "background": { "type": "color", "color": "#FFF7E6" },
+      "activityTime": { "startTime": "", "endTime": "" }
+    },
+    "landingKey": "landing-01",
+    "modules": [
+      {
+        "type": "HERO_IMAGE",
+        "id": "hero-1",
+        "image": "assets/landing.landing-01.hero.image.png",
+        "cornerRadiusRpx": 16,
+        "marginTopRpx": 24,
+        "marginBottomRpx": 16
+      },
+      {
+        "type": "SPACER",
+        "id": "spacer-1",
+        "heightRpx": 16,
+        "background": { "mode": "transparent" }
+      },
+      {
+        "type": "SECTION_TITLE",
+        "id": "title-1",
+        "mode": {
+          "mode": "text",
+          "text": "热门装备低至五折",
+          "fontSizeRpx": 32,
+          "bold": true,
+          "textColor": "#222222",
+          "backgroundColor": "#FFFFFF",
+          "align": "center",
+          "marginTopRpx": 8,
+          "marginBottomRpx": 8
+        }
+      },
+      {
+        "type": "IMAGE_AD",
+        "id": "ad-1",
+        "mode": { "mode": "double", "count": 2 },
+        "images": [
+          "assets/landing.landing-01.imageAd.1.image.png",
+          "assets/landing.landing-01.imageAd.2.image.png"
+        ],
+        "cornerRadiusRpx": 12
+      },
+      {
+        "type": "COUPON_GROUP",
+        "id": "coupon-1",
+        "coupons": [
+          { "couponTemplateId": "cpt-1001" },
+          { "couponTemplateId": "cpt-1002" }
+        ],
+        "overallBackground": { "mode": "color", "color": "#FFFFFF" },
+        "amountAreaBackground": { "mode": "color", "color": "#FF4D4F" },
+        "contentAreaBackground": { "mode": "transparent" }
+      },
+      {
+        "type": "PRODUCT_COLLECTION",
+        "id": "products-1",
+        "products": [
+          { "productId": "itm-2001" },
+          { "productId": "itm-2002" }
+        ],
+        "spacingRpx": 16,
+        "background": { "mode": "color", "color": "#FFFFFF" }
+      }
+    ],
+    "pendingResourceRequests": [
+      {
+        "resourceType": "coupon",
+        "criteria": "满 300 减 80 通用券",
+        "purpose": "COUPON_GROUP 模块券面展示",
+        "moduleRef": "coupon-1"
+      }
+    ]
+  }
+}

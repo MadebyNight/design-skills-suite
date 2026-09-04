@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/asset-request.schema.json",
+  "title": "AssetRequest",
+  "schemaVersion": "1.0.0",
+  "description": "统一表达图片素材需求，作为生图/编辑 Skill 的输入。acceptance/retryPolicy 为可选的请求级执行合同；未声明时维持旧的精确尺寸验收和单次执行语义。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "usageSlot",
+    "theme",
+    "targetWidth",
+    "targetHeight",
+    "aspectRatio",
+    "format",
+    "fit",
+    "safeArea",
+    "referenceImages",
+    "forbiddenContent",
+    "allowGenerate",
+    "allowEdit"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "usageSlot": {
+      "description": "使用位置与组件槽位。",
+      "type": "string",
+      "minLength": 1
+    },
+    "theme": {
+      "type": "string",
+      "minLength": 1
+    },
+    "targetWidth": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "targetHeight": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "aspectRatio": {
+      "type": "string",
+      "minLength": 1
+    },
+    "format": {
+      "type": "string",
+      "minLength": 1
+    },
+    "fit": {
+      "type": "string",
+      "enum": ["cover", "contain"]
+    },
+    "safeArea": {
+      "description": "构图安全区域说明。",
+      "type": "string",
+      "minLength": 1
+    },
+    "referenceImages": {
+      "description": "参考图或品牌素材（AssetResult 列表）。",
+      "type": "array",
+      "items": {
+        "$ref": "asset-result.schema.json"
+      }
+    },
+    "forbiddenContent": {
+      "description": "禁用内容。",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowGenerate": {
+      "type": "boolean"
+    },
+    "allowEdit": {
+      "type": "boolean"
+    },
+    "acceptance": {
+      "description": "可选验收合同；缺省时执行方按精确尺寸验收（宽高严格相等）。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "description": "exact-size：宽高严格等于 targetWidth/targetHeight；aspect-ratio：以 targetWidth/targetHeight 比例为唯一数值目标。",
+          "type": "string",
+          "enum": ["exact-size", "aspect-ratio"]
+        },
+        "maxAspectRatioError": {
+          "description": "比例模式下的最大相对误差 abs((actualRatio / targetRatio) - 1)；必须 ≤ 0.03，边界值 0.03 视为通过；执行方缺省取 0.03。",
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.03
+        }
+      }
+    },
+    "retryPolicy": {
+      "description": "可选重试合同；缺省时维持单次执行语义。attempt 计数含首次执行，即 1 表示不重试。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "generateMaxAttempts",
+        "adaptMaxAttempts"
+      ],
+      "properties": {
+        "generateMaxAttempts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "adaptMaxAttempts": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        }
+      }
+    }
+  }
+}

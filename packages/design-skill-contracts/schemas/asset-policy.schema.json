@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/asset-policy.schema.json",
+  "title": "AssetPolicy",
+  "schemaVersion": "1.0.0",
+  "description": "统一表达图片素材的生成/复用策略，作为 Batch item 与 runDesign 参数的一部分。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "default",
+    "rules"
+  ],
+  "properties": {
+    "default": {
+      "$ref": "#/$defs/decision"
+    },
+    "rules": {
+      "description": "按 usageSlot 覆盖默认决策的规则，顺序保留（先匹配者优先）。",
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "usageSlot",
+          "source",
+          "requirement"
+        ],
+        "properties": {
+          "usageSlot": {
+            "description": "使用位置与组件槽位；仅允许非空字母数字._-，可选仅尾部单个 *。",
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._-]+\\*?$"
+          },
+          "source": {
+            "type": "string",
+            "enum": ["generate", "reuse"]
+          },
+          "requirement": {
+            "type": "string",
+            "enum": ["required", "optional"]
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "requirement"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "enum": ["generate", "reuse"]
+        },
+        "requirement": {
+          "type": "string",
+          "enum": ["required", "optional"]
+        }
+      }
+    }
+  }
+}

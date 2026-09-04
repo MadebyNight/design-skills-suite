@@ -1,0 +1,44 @@
+.lp-page { width: 100%; min-height: 100vh; overflow-x: hidden; color: #20252b; background: var(--landing-page-bg); }
+.lp-cover-image { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lp-hero { width: 100%; height: 180px; overflow: hidden; }
+
+.lp-image-ad { display: flex; gap: 8px; padding: 8px 12px; }
+.lp-image-ad.is-single .lp-image-ad-item { width: 100%; }
+.lp-image-ad.is-double .lp-image-ad-item { width: calc((100% - 8px) / 2); }
+.lp-image-ad-item { height: 120px; overflow: hidden; background: #e7ebef; border-radius: 4px; }
+
+.lp-section-title { min-height: 28px; padding-right: 12px; padding-left: 12px; color: #fff; font-size: 16px; font-weight: 700; line-height: 1.35; }
+.lp-section-title.is-centered { text-align: center; }
+.lp-section-title-image { display: inline-block; max-width: 351px; height: auto; vertical-align: middle; }
+
+.lp-coupons { display: flex; flex-wrap: wrap; gap: 8px; padding: 8px 12px; }
+.lp-coupons.is-single .lp-coupon { width: 100%; }
+.lp-coupon { display: flex; width: calc((100% - 8px) / 2); min-width: 0; min-height: 84px; overflow: hidden; background: transparent; border: 1px solid #e2d8d0; border-radius: 7px; }
+.lp-coupon-value { display: flex; flex: 0 0 64px; flex-direction: column; align-items: center; justify-content: center; min-width: 0; color: var(--coupon); background: var(--coupon-soft); }
+.lp-coupon-amount { font-size: 22px; font-weight: 700; line-height: 1; }
+.lp-coupon-amount small { margin-right: 1px; font-size: 10px; }
+.lp-coupon-note { max-width: 58px; margin-top: 4px; overflow: hidden; font-size: 9px; line-height: 1.2; white-space: nowrap; text-overflow: ellipsis; }
+.lp-coupon-copy { display: flex; flex: 1; flex-direction: column; align-items: flex-start; justify-content: center; min-width: 0; padding: 7px; background: #fff; }
+.lp-coupon-title { width: 100%; overflow: hidden; color: #34302e; font-size: 11px; font-weight: 600; white-space: nowrap; text-overflow: ellipsis; }
+.lp-coupon-action { min-width: 48px; height: 21px; margin-top: 8px; padding: 0 8px; color: #fff; font-size: 9px; line-height: 21px; text-align: center; background: var(--coupon); border-radius: 11px; }
+.lp-coupon-action.is-disabled { color: #8a8f96; background: #eceeef; }
+
+.lp-products { display: flex; flex-wrap: wrap; padding: 4px 10px 14px; background: #f5f6f4; }
+.lp-product { width: calc((100% - 8px) / 2); min-width: 0; margin-right: 8px; margin-bottom: 8px; overflow: hidden; background: #fff; border-radius: 6px; box-shadow: var(--shadow-card); }
+.lp-product:nth-child(2n) { margin-right: 0; }
+.lp-product-image-wrap { width: 100%; height: 152px; background: #f6f7f8; }
+.lp-product-image { width: 100%; height: 100%; object-fit: contain; }
+.lp-product-copy { min-height: 92px; padding: 7px 8px 9px; }
+.lp-product-title,
+.lp-product-shop { display: block; width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.lp-product-title { color: #2f343b; font-size: 12px; font-weight: 600; }
+.lp-product-shop { margin-top: 3px; color: #9198a2; font-size: 9px; }
+.lp-product-price { margin-top: 10px; color: #c7462f; font-size: 18px; font-weight: 700; }
+.lp-product-price small { margin: 0 2px 0 0; font-size: 9px; font-weight: 400; }
+.lp-product-price small:last-child { margin-left: 2px; color: #9a827d; }
+
+.lp-action { display: flex; justify-content: center; padding: 10px 12px; }
+.lp-action.is-full .lp-action-button { width: 100%; }
+.lp-action-button { min-width: 118px; height: 40px; padding: 0 20px; color: #fff; font-size: 13px; font-weight: 600; line-height: 39px; text-align: center; background: var(--landing-accent); border: 1px solid var(--landing-accent); border-radius: 12px; }
+.lp-action-button.is-outline { color: var(--landing-accent); background: transparent; }
+.lp-spacer { height: 12px; }

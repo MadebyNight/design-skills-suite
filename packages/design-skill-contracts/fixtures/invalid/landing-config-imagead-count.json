@@ -1,0 +1,25 @@
+{
+  "schema": "landing-config.schema.json",
+  "fixture": {
+    "schemaVersion": "landing-schema/v1",
+    "page": {
+      "name": "夏日出游租赁",
+      "navTitle": "夏日出游",
+      "background": { "type": "color", "color": "#FFF7E6" },
+      "activityTime": { "startTime": "", "endTime": "" }
+    },
+    "modules": [
+      {
+        "type": "IMAGE_AD",
+        "id": "ad-1",
+        "mode": { "mode": "double", "count": 2 },
+        "images": [
+          "assets/landing.landing-01.imageAd.1.image.png"
+        ],
+        "cornerRadiusRpx": 12
+      }
+    ],
+    "pendingResourceRequests": []
+  },
+  "note": "IMAGE_AD 双图模式却只有 1 张图片，数量与模式不一致"
+}

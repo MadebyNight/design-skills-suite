@@ -1,0 +1,19 @@
+{
+  "schema": "skill-manifest.schema.json",
+  "fixture": {
+    "schemaVersion": "1",
+    "id": "skill-image-generate",
+    "version": "0.1.0",
+    "name": "简易生图 Skill",
+    "description": "接收结构化 Skill",
+    "entrypoint": "bin/image-generate.mjs",
+    "inputSchema": "asset-request.schema.json",
+    "outputSchema": "asset-result.schema.json",
+    "provides": ["image.generate"],
+    "requires": ["image.unregistered-capability"],
+    "automatic": true,
+    "confirmationPoints": [],
+    "verifyCommand": "image-generate capabilities"
+  },
+  "note": "requires 引用了未登记的 capability"
+}

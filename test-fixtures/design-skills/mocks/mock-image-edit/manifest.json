@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "1",
+  "id": "mock-image-edit",
+  "version": "1.0.0",
+  "name": "Mock Image Edit",
+  "description": "用于 capability conformance 的确定性图片编辑替身。",
+  "entrypoint": "bin/mock-image-edit.mjs",
+  "inputSchema": "asset-request.schema.json",
+  "outputSchema": "asset-result.schema.json",
+  "provides": ["image.crop", "image.resize", "image.export"],
+  "requires": [],
+  "automatic": true,
+  "confirmationPoints": [],
+  "verifyCommand": "node bin/mock-image-edit.mjs capabilities"
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "alipay-home-config.schema.json",
+  "fixture": {
+    "schemaVersion": "alipay-home-config/v1",
+    "homeTheme": "夏日出游租赁",
+    "landingThemes": [],
+    "searchBar": {
+      "placeholderText": "搜索",
+      "topBarBackgroundColor": "#FFFFFF",
+      "inputBackgroundColor": "#F5F5F5",
+      "inputButtonBackgroundColor": "#1677FF",
+      "topBarCornerRadiusRpx": 44,
+      "inputCornerRadiusRpx": 34
+    },
+    "carousel": [],
+    "quickEntries": { "entries": [] },
+    "tofuBlocks": { "slots": [] },
+    "waistBanners": [],
+    "productRecommendation": { "mode": "preserve-existing" },
+    "carouselAutoPlay": { "intervalMs": 3000, "circular": true },
+    "jumpUrls": ["https://example.com/page"]
+  },
+  "note": "未声明字段 carouselAutoPlay / jumpUrls：生产未闭环的轮播行为配置与生产 jumpUrl 均被严格 Schema 拒绝"
+}

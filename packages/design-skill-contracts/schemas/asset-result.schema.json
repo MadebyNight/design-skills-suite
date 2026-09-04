@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/asset-result.schema.json",
+  "title": "AssetResult",
+  "schemaVersion": "1.0.0",
+  "description": "统一表达图片产物，由生图/编辑 Skill 输出。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "assetRequestId",
+    "artifactId",
+    "path",
+    "mimeType",
+    "width",
+    "height",
+    "sha256",
+    "sourceSkill",
+    "sourceSkillVersion",
+    "strictSizeSatisfied",
+    "notes"
+  ],
+  "properties": {
+    "assetRequestId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "artifactId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mimeType": {
+      "type": "string",
+      "minLength": 1
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourceSkill": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceSkillVersion": {
+      "type": "string",
+      "minLength": 1
+    },
+    "strictSizeSatisfied": {
+      "description": "宽高是否严格等于请求的 targetWidth/targetHeight（精确模式验收要求为 true）；比例模式不以此为验收条件，仅作兼容信息保留。",
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

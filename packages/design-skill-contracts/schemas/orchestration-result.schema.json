@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/orchestration-result.schema.json",
+  "title": "OrchestrationResult",
+  "schemaVersion": "1.0.0",
+  "description": "编排 Skill 输出：步骤级执行结果与失败汇总。首版不持久化。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "briefId",
+    "status",
+    "selectedCapabilities",
+    "steps",
+    "deliverable"
+  ],
+  "properties": {
+    "briefId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": ["succeeded", "failed", "unsupported"]
+    },
+    "selectedCapabilities": {
+      "description": "本次执行选中的 capability ID 清单。",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "page.alipay.home.design",
+          "page.alipay.landing.design",
+          "image.generate",
+          "image.crop",
+          "image.resize",
+          "image.export",
+          "research.search",
+          "design.guidance",
+          "workflow.orchestrate"
+        ]
+      }
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/step"
+      }
+    },
+    "deliverable": {
+      "$ref": "design-package.schema.json"
+    }
+  },
+  "$defs": {
+    "step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "status", "details"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "capability": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["succeeded", "skipped", "warning", "failed"]
+        },
+        "details": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

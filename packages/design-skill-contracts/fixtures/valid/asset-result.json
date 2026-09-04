@@ -1,0 +1,16 @@
+{
+  "schema": "asset-result.schema.json",
+  "fixture": {
+    "assetRequestId": "asset-req-001",
+    "artifactId": "home-hero-final",
+    "path": "design-package/assets/home-hero.png",
+    "mimeType": "image/png",
+    "width": 1920,
+    "height": 380,
+    "sha256": "a7230805750d5b6731760b0bb4ed54bb305692369f8bc0059e868e7bf3d06f31",
+    "sourceSkill": "skill-image-generate",
+    "sourceSkillVersion": "0.1.0",
+    "strictSizeSatisfied": true,
+    "notes": ["经 image.export 导出，严格尺寸满足"]
+  }
+}

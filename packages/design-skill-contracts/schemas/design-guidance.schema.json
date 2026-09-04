@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/design-guidance.schema.json",
+  "title": "DesignGuidance",
+  "schemaVersion": "1.0.0",
+  "description": "合并多个设计增强 Skill 的软建议。软建议不能突破 ComponentCatalog，所有条目必须经过组件约束过滤。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "items",
+    "catalogCompatibility"
+  ],
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/guidanceItem"
+      }
+    },
+    "catalogCompatibility": {
+      "description": "全局与 ComponentCatalog 的兼容性结果。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceCommit", "compatible"],
+      "properties": {
+        "sourceCommit": { "type": "string", "minLength": 1 },
+        "compatible": { "type": "boolean" },
+        "rejectedCount": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+  "$defs": {
+    "guidanceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sourceSkill",
+        "sourceSkillVersion",
+        "kind",
+        "content",
+        "catalogAccepted",
+        "rejectionReason"
+      ],
+      "properties": {
+        "sourceSkill": { "type": "string", "minLength": 1 },
+        "sourceSkillVersion": { "type": "string", "minLength": 1 },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "informationArchitecture",
+            "visualDirection",
+            "color",
+            "typography",
+            "contentDensity",
+            "assetComposition",
+            "qualityReview"
+          ]
+        },
+        "content": { "type": "string", "minLength": 1 },
+        "catalogAccepted": { "type": "boolean" },
+        "rejectionReason": {
+          "description": "被 ComponentCatalog 拒绝的原因；采纳时为 null。",
+          "type": ["string", "null"]
+        }
+      }
+    }
+  }
+}

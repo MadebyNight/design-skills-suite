@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "1",
+  "batchId": "batch-2026-08-28.001",
+  "items": [
+    {
+      "itemId": "home",
+      "brief": {
+        "id": "brief-home-001",
+        "goal": "为暑期数码租赁促销设计支付宝小程序首页",
+        "deliverableType": "alipay.home",
+        "audience": "25-35 岁城市年轻用户",
+        "brandConstraints": [
+          "只允许使用现有首页组件",
+          "禁止新增 class",
+          "禁止内联样式"
+        ],
+        "contentRequirements": [
+          "突出暑期优惠",
+          "包含活动入口文案"
+        ],
+        "visualConstraints": [
+          "保持清新色调",
+          "信息层级清晰"
+        ],
+        "outputSpec": {
+          "width": 375,
+          "height": 812,
+          "format": "png"
+        },
+        "inputArtifacts": [],
+        "researchPolicy": "none",
+        "forbiddenChanges": [
+          "修改按钮圆角",
+          "新增组件",
+          "修改 tokens",
+          "引入远程资源"
+        ]
+      },
+      "assetPolicy": {
+        "default": {
+          "source": "generate",
+          "requirement": "required"
+        },
+        "rules": []
+      }
+    },
+    {
+      "itemId": "landing",
+      "brief": {
+        "id": "brief-landing-001",
+        "goal": "为暑期数码租赁促销设计支付宝落地页",
+        "deliverableType": "alipay.landing",
+        "audience": "25-35 岁城市年轻用户",
+        "brandConstraints": [
+          "只允许使用现有落地页组件",
+          "禁止新增 class",
+          "禁止内联样式"
+        ],
+        "contentRequirements": [
+          "突出暑期优惠",
+          "包含活动入口文案"
+        ],
+        "visualConstraints": [
+          "保持清新色调",
+          "信息层级清晰"
+        ],
+        "outputSpec": {
+          "width": 375,
+          "height": 812,
+          "format": "png"
+        },
+        "inputArtifacts": [],
+        "researchPolicy": "none",
+        "forbiddenChanges": [
+          "修改按钮圆角",
+          "新增组件",
+          "修改 tokens",
+          "引入远程资源"
+        ]
+      },
+      "assetPolicy": {
+        "default": {
+          "source": "reuse",
+          "requirement": "optional"
+        },
+        "rules": [
+          {
+            "usageSlot": "landing.slot.hero",
+            "source": "generate",
+            "requirement": "required"
+          }
+        ]
+      }
+    }
+  ]
+}

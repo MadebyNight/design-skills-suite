@@ -1,0 +1,59 @@
+{
+  "taskId": "golden-06",
+  "title": "落地页完整任务：活动 Brief → ResearchPack → 素材 → 原型",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/design-brief.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/research-pack.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/design-package.schema.json"
+  ],
+  "input": {
+    "schema": "design-brief.schema.json",
+    "brief": {
+      "id": "golden-06-brief",
+      "goal": "为双十一大促设计一个支付宝小程序落地页，完成研究、素材与原型交付",
+      "deliverableType": "alipay.landing",
+      "audience": "全年龄电商用户",
+      "brandConstraints": ["只允许使用现有落地页组件", "禁止新增 class", "禁止内联样式"],
+      "contentRequirements": ["突出大促折扣", "增加一张促销广告图", "明确的转化入口", "营销信息层级完整"],
+      "visualConstraints": ["促销红金配色", "内容密度适中"],
+      "outputSpec": { "width": 375, "height": 1334, "format": "png" },
+      "inputArtifacts": [],
+      "researchPolicy": "optional",
+      "forbiddenChanges": ["修改按钮圆角", "新增组件", "修改 tokens", "引入远程资源"]
+    }
+  },
+  "requiredCapabilities": ["page.alipay.landing.design", "research.search", "image.generate", "image.resize", "image.crop", "image.export"],
+  "expectedArtifacts": [
+    {
+      "kind": "design-package",
+      "schema": "design-package.schema.json",
+      "count": 1,
+      "pathPattern": "design-package/"
+    },
+    {
+      "kind": "research-pack",
+      "schema": "research-pack.schema.json",
+      "count": 1
+    }
+  ],
+  "strongAssertions": [
+    "输出合法 DesignPackage 且通过 schema 校验",
+    "存在 research-pack.json（researchPolicy=optional 时若产生则通过校验）",
+    "只消费 landing 类型 ComponentCatalog",
+    "素材请求按 deriveLandingConfig 状态数据同源（landing.<key>.<slot>.image 命名），hero 1500x720、IMAGE_AD 单图 1404x480",
+    "不为商品图片创建素材请求（商品保持快照引用，由业务系统维护）",
+    "素材按请求验收合同回填（比例模式误差 ≤3%），验收通过则 pending 清零",
+    "class/variant 全部在白名单内",
+    "无新增组件、无 DOM/CSS 修改"
+  ],
+  "allowedDifferences": [
+    "optional 研究可按需决定是否执行",
+    "素材像素内容和文案可不同，但不得越出约束",
+    "hero/广告图素材实际宽高可与请求目标不同（比例模式按 ≤3% 误差验收，不要求严格像素相等）"
+  ],
+  "failurePolicy": {
+    "type": "landing",
+    "onOptionalResearchFailed": "记录 warning 后继续，不阻断",
+    "onMissingAsset": "输出结构化 AssetRequest"
+  }
+}

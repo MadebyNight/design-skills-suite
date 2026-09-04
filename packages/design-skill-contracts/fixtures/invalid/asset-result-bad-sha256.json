@@ -1,0 +1,16 @@
+{
+  "schema": "asset-result.schema.json",
+  "fixture": {
+    "assetRequestId": "asset-req-001",
+    "artifactId": "home-hero-final",
+    "path": "design-package/assets/home-hero.png",
+    "mimeType": "image/png",
+    "width": 1920,
+    "height": 380,
+    "sha256": "UPPERCASE_INVALID_SHA256_NOT_HEX",
+    "sourceSkill": "skill-image-generate",
+    "sourceSkillVersion": "0.1.0",
+    "strictSizeSatisfied": true,
+    "notes": ["sha256 必须为 64 位小写十六进制"]
+  }
+}

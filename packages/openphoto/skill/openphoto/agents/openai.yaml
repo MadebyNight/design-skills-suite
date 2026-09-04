@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenPhoto"
+  short_description: "供 Agent 结构化调用的本地图片编辑和按需 AI 处理能力"
+  default_prompt: "Use $openphoto to inspect, edit, and render a local image."

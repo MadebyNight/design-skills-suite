@@ -1,0 +1,19 @@
+{
+  "schema": "component-catalog.schema.json",
+  "fixture": {
+    "sourceCommit": "abc1234",
+    "pageType": "alipay.home",
+    "components": [
+      {
+        "id": "home-hero",
+        "name": "首页主视觉",
+        "domTemplate": "<section class=\"hero\"><img data-slot=\"hero-image\"></section>",
+        "allowedClasses": ["hero", "hero--wide"],
+        "allowedVariants": ["wide", "standard"],
+        "slots": [
+          { "type": "image", "name": "hero-image", "width": 1920, "height": 380, "aspectRatio": "1920:380", "objectFit": "cover" }
+        ]
+      }
+    ]
+  }
+}

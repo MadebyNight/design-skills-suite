@@ -1,0 +1,38 @@
+{
+  "schema": "batch-design-request.schema.json",
+  "fixture": {
+    "schemaVersion": "1",
+    "batchId": "batch-2026-08-31.002",
+    "pageLinkage": {
+      "homeTheme": "夏日出游租赁",
+      "landingThemes": [
+        { "theme": "夏日出游租赁", "landingKey": "landing-01" },
+        { "theme": "演唱会租赁", "landingKey": "landing-01" }
+      ],
+      "jumpUrl": "https://example.com/prod"
+    },
+    "items": [
+      {
+        "itemId": "item.landing.001",
+        "brief": {
+          "id": "brief-land-001",
+          "goal": "设计一个落地页",
+          "deliverableType": "alipay.landing",
+          "audience": "用户",
+          "brandConstraints": [],
+          "contentRequirements": [],
+          "visualConstraints": [],
+          "outputSpec": { "width": 375, "height": 812 },
+          "inputArtifacts": [],
+          "researchPolicy": "none",
+          "forbiddenChanges": []
+        },
+        "assetPolicy": {
+          "default": { "source": "generate", "requirement": "required" },
+          "rules": []
+        }
+      }
+    ]
+  },
+  "note": "pageLinkage 含未声明字段 jumpUrl（生产跳转不进合同），且 landingKey 重复（唯一性语义由编排器加载时检查，Schema 放行结构本身，故重复 key 单独不构成失败；此处以 jumpUrl 触发拒绝）"
+}

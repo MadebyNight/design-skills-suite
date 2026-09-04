@@ -1,0 +1,19 @@
+{
+  "schema": "batch-design-result.schema.json",
+  "fixture": {
+    "schemaVersion": "1",
+    "batchId": "batch-2026-08-28.001",
+    "status": "failed",
+    "summary": { "total": 1, "succeeded": 0, "failed": 1, "skipped": 0 },
+    "items": [
+      {
+        "itemId": "item.home.001",
+        "status": "failed",
+        "attempt": 1,
+        "outputRoot": "out/item.home.001",
+        "resultPath": "out/item.home.001/result.json"
+      }
+    ]
+  },
+  "note": "item 缺少必填字段 error"
+}

@@ -1,0 +1,213 @@
+{
+  "sourceCommit": "481946f0fdb515d6f93af82ff7e23d724b2c2b7b",
+  "pageType": "alipay.home",
+  "components": [
+    {
+      "id": "home-banner",
+      "name": "02 · 轮播 Banner",
+      "domTemplate": "<div class=\"home-banner\"><img src=\"../assets/home/banner-concert.png\" alt=\"演唱会活动主视觉\"></div>",
+      "allowedClasses": [
+        "home-banner"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "image"
+        }
+      ]
+    },
+    {
+      "id": "home-category-tabs",
+      "name": "06 · 商品分类 Tab",
+      "domTemplate": "<nav class=\"home-category-tabs\"><div class=\"home-category-tabs__item is-active\">爆款严选</div><div class=\"home-category-tabs__item\">电脑专区</div><div class=\"home-category-tabs__item\">智能穿戴</div><div class=\"home-category-tabs__item\">相机摄影</div></nav>",
+      "allowedClasses": [
+        "home-category-tabs",
+        "home-category-tabs__item"
+      ],
+      "allowedVariants": [
+        "is-active"
+      ],
+      "slots": []
+    },
+    {
+      "id": "home-nav",
+      "name": "03 · 五项分类导航",
+      "domTemplate": "<nav class=\"home-nav\" aria-label=\"商品分类\"><div class=\"home-nav__item\"><img class=\"home-nav__icon\" src=\"../assets/home/nav-action-camera.png\" alt=\"\"><div class=\"home-nav__label\">运动相机</div></div><div class=\"home-nav__item\"><img class=\"home-nav__icon\" src=\"../assets/home/nav-photography.png\" alt=\"\"><div class=\"home-nav__label\">相机摄影</div></div><div class=\"home-nav__item\"><img class=\"home-nav__icon\" src=\"../assets/home/nav-concert.png\" alt=\"\"><div class=\"home-nav__label\">演唱会神器</div></div><div class=\"home-nav__item\"><img class=\"home-nav__icon\" src=\"../assets/home/nav-ccd.png\" alt=\"\"><div class=\"home-nav__label\">CCD专区</div></div><div class=\"home-nav__item\"><img class=\"home-nav__icon\" src=\"../assets/home/nav-subsidy.png\" alt=\"\"><div class=\"home-nav__label\">超级补贴</div></div></nav>",
+      "allowedClasses": [
+        "home-nav",
+        "home-nav__icon",
+        "home-nav__item",
+        "home-nav__label"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "home-nav__icon",
+          "width": 46,
+          "height": 46,
+          "objectFit": "cover"
+        },
+        {
+          "type": "image",
+          "name": "home-nav__icon-2",
+          "width": 46,
+          "height": 46,
+          "objectFit": "cover"
+        },
+        {
+          "type": "image",
+          "name": "home-nav__icon-3",
+          "width": 46,
+          "height": 46,
+          "objectFit": "cover"
+        },
+        {
+          "type": "image",
+          "name": "home-nav__icon-4",
+          "width": 46,
+          "height": 46,
+          "objectFit": "cover"
+        },
+        {
+          "type": "image",
+          "name": "home-nav__icon-5",
+          "width": 46,
+          "height": 46,
+          "objectFit": "cover"
+        }
+      ]
+    },
+    {
+      "id": "home-product-card",
+      "name": "07 · 双列商品卡片",
+      "domTemplate": "<div class=\"home-product-grid\"><article class=\"home-product-card\"><div class=\"home-product-card__image-wrap\"><img class=\"home-product-card__image\" src=\"../assets/home/product-osmo.jpg\" alt=\"大疆 DJI Osmo Pocket 4\"></div><div class=\"home-product-card__copy\"><div class=\"home-product-card__kicker\">大疆 DJI Osmo Pocket 4</div><div class=\"home-product-card__title\"><span class=\"home-product-card__tag\">全新</span>小胡神器，无限量 token plan</div><div class=\"home-product-card__price\"><small>￥</small><strong>0</strong>.01<small>/天</small></div></div></article><article class=\"home-product-card\"><div class=\"home-product-card__image-wrap\"><img class=\"home-product-card__image\" src=\"../assets/home/product-vivo.jpg\" alt=\"vivo X300 Ultra\"></div><div class=\"home-product-card__copy\"><div class=\"home-product-card__kicker\">vivo X300 Ultra 长焦手机</div><div class=\"home-product-card__title\"><span class=\"home-product-card__tag\">99新</span>X300 Ultra</div><div class=\"home-product-card__price\"><small>￥</small><strong>40</strong><small>/天</small></div></div></article></div>",
+      "allowedClasses": [
+        "home-product-card",
+        "home-product-card__copy",
+        "home-product-card__image",
+        "home-product-card__image-wrap",
+        "home-product-card__kicker",
+        "home-product-card__price",
+        "home-product-card__tag",
+        "home-product-card__title",
+        "home-product-grid"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "home-product-card__image",
+          "width": 132,
+          "height": 135,
+          "objectFit": "contain"
+        },
+        {
+          "type": "image",
+          "name": "home-product-card__image-2",
+          "width": 132,
+          "height": 135,
+          "objectFit": "contain"
+        }
+      ]
+    },
+    {
+      "id": "home-search",
+      "name": "01 · 顶部搜索",
+      "domTemplate": "<div class=\"home-top\"><div class=\"home-search\"><img class=\"home-search__icon\" src=\"../assets/home/search.png\" alt=\"\"><span class=\"home-search__placeholder\">搜索宝贝，开启租赁新生活</span><span class=\"home-search__button\">搜索</span></div></div>",
+      "allowedClasses": [
+        "home-search",
+        "home-search__button",
+        "home-search__icon",
+        "home-search__placeholder",
+        "home-top"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "home-search__icon",
+          "width": 24,
+          "height": 24
+        }
+      ]
+    },
+    {
+      "id": "home-tabbar",
+      "name": "08 · 底部 TabBar",
+      "domTemplate": "<nav class=\"home-tabbar\"><div class=\"home-tabbar__item is-active\"><img class=\"home-tabbar__icon\" src=\"../assets/home/home_b.png\" alt=\"\"><div>租物</div></div><div class=\"home-tabbar__item\"><img class=\"home-tabbar__icon\" src=\"../assets/home/classify.png\" alt=\"\"><div>分类</div></div><div class=\"home-tabbar__item\"><img class=\"home-tabbar__icon\" src=\"../assets/home/mine.png\" alt=\"\"><div>我的</div></div></nav>",
+      "allowedClasses": [
+        "home-tabbar",
+        "home-tabbar__icon",
+        "home-tabbar__item"
+      ],
+      "allowedVariants": [
+        "is-active"
+      ],
+      "slots": [
+        {
+          "type": "image",
+          "name": "home-tabbar__icon",
+          "width": 23,
+          "height": 23,
+          "objectFit": "contain"
+        },
+        {
+          "type": "image",
+          "name": "home-tabbar__icon-2",
+          "width": 23,
+          "height": 23,
+          "objectFit": "contain"
+        },
+        {
+          "type": "image",
+          "name": "home-tabbar__icon-3",
+          "width": 23,
+          "height": 23,
+          "objectFit": "contain"
+        }
+      ]
+    },
+    {
+      "id": "home-tofu",
+      "name": "04 · 三块运营图",
+      "domTemplate": "<div class=\"home-tofu\"><div class=\"home-tofu__item\"><img src=\"../assets/home/tofu-travel.png\" alt=\"出游推荐\"></div><div class=\"home-tofu__item\"><img src=\"../assets/home/tofu-computer.png\" alt=\"电脑系列\"></div><div class=\"home-tofu__item\"><img src=\"../assets/home/tofu-camera.png\" alt=\"运动相机\"></div></div>",
+      "allowedClasses": [
+        "home-tofu",
+        "home-tofu__item"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "image"
+        },
+        {
+          "type": "image",
+          "name": "image-2"
+        },
+        {
+          "type": "image",
+          "name": "image-3"
+        }
+      ]
+    },
+    {
+      "id": "home-waist-banner",
+      "name": "05 · 腰封",
+      "domTemplate": "<div class=\"home-waist-banner\"><img src=\"../assets/home/waist.png\" alt=\"精选租赁推荐\"><span class=\"home-waist-banner__count\">1 / 1</span></div>",
+      "allowedClasses": [
+        "home-waist-banner",
+        "home-waist-banner__count"
+      ],
+      "allowedVariants": [],
+      "slots": [
+        {
+          "type": "image",
+          "name": "image"
+        }
+      ]
+    }
+  ]
+}

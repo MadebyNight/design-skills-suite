@@ -1,0 +1,29 @@
+{
+  "schema": "landing-config.schema.json",
+  "fixture": {
+    "schemaVersion": "landing-schema/v1",
+    "page": {
+      "name": "夏日出游租赁",
+      "navTitle": "夏日出游",
+      "background": { "type": "color", "color": "#FFF7E6" },
+      "activityTime": { "startTime": "2026-08-01 00:00", "endTime": "2026-08-31 23:59" }
+    },
+    "modules": [
+      {
+        "type": "HERO_IMAGE",
+        "id": "hero-1",
+        "image": "assets/landing.landing-01.hero.image.png",
+        "cornerRadiusRpx": 16,
+        "marginTopRpx": 24,
+        "marginBottomRpx": 16
+      },
+      {
+        "type": "VIDEO",
+        "id": "video-1",
+        "src": "assets/video.mp4"
+      }
+    ],
+    "pendingResourceRequests": []
+  },
+  "note": "VIDEO 非白名单模块（七类以外），且 activityTime 不应由 Skill 填写"
+}

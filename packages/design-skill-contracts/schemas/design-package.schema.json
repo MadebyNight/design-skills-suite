@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/design-package.schema.json",
+  "title": "DesignPackage",
+  "schemaVersion": "1.0.0",
+  "description": "每次页面任务输出统一交付包的元数据与完整性描述。文件 kind 覆盖首页/落地页交付物（home-config.json、landing-config.json、configuration-guide.md）；kind 命名与文件名对应，其余文件为 asset。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "packageRoot",
+    "designBriefId",
+    "files",
+    "sourceCommit"
+  ],
+  "properties": {
+    "packageRoot": {
+      "type": "string",
+      "minLength": 1
+    },
+    "designBriefId": {
+      "type": "string",
+      "minLength": 1
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/packageFile"
+      }
+    },
+    "sourceCommit": {
+      "description": "组件库源 commit。",
+      "type": "string",
+      "minLength": 1
+    },
+    "skillDependencies": {
+      "description": "实际使用的 Skill ID 与版本记录。",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/skillRef"
+      }
+    }
+  },
+  "$defs": {
+    "packageFile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "kind"],
+      "properties": {
+        "path": { "type": "string", "minLength": 1 },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "prototype.png",
+            "prototype.html",
+            "asset",
+            "design-brief.json",
+            "component-usage.json",
+            "design-guidance.json",
+            "research-pack.json",
+            "asset-manifest.json",
+            "validation-report.json",
+            "home-config.json",
+            "landing-config.json",
+            "configuration-guide.md"
+          ]
+        },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "skillRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "version"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

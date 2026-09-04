@@ -1,0 +1,24 @@
+{
+  "schema": "landing-config.schema.json",
+  "fixture": {
+    "schemaVersion": "landing-schema/v1",
+    "page": {
+      "name": "夏日出游租赁",
+      "navTitle": "夏日出游",
+      "background": { "type": "both", "color": "#FFF7E6", "image": "assets/bg.png" },
+      "activityTime": { "startTime": "", "endTime": "" }
+    },
+    "modules": [
+      {
+        "type": "HERO_IMAGE",
+        "id": "hero-1",
+        "image": "assets/landing.landing-01.hero.image.png",
+        "cornerRadiusRpx": 16,
+        "marginTopRpx": 24,
+        "marginBottomRpx": 16
+      }
+    ],
+    "pendingResourceRequests": []
+  },
+  "note": "页面背景 both 同时指定纯色和图片，违反纯色或图片二选一的 oneOf 约束"
+}

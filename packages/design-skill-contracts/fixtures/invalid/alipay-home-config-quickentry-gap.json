@@ -1,0 +1,34 @@
+{
+  "schema": "alipay-home-config.schema.json",
+  "fixture": {
+    "schemaVersion": "alipay-home-config/v1",
+    "homeTheme": "夏日出游租赁",
+    "landingThemes": [],
+    "searchBar": {
+      "placeholderText": "搜索",
+      "topBarBackgroundColor": "#FFFFFF",
+      "inputBackgroundColor": "#F5F5F5",
+      "inputButtonBackgroundColor": "#1677FF",
+      "topBarCornerRadiusRpx": 44,
+      "inputCornerRadiusRpx": 34
+    },
+    "carousel": [],
+    "quickEntries": {
+      "entries": [
+        { "slot": "01", "name": "运动相机", "image": "assets/home.quickEntries.01.image.png" },
+        { "slot": "02", "name": "相机摄影", "image": "assets/home.quickEntries.02.image.png" },
+        { "slot": "03", "name": "演唱会神器", "image": "assets/home.quickEntries.03.image.png" },
+        { "slot": "04", "name": "CCD专区", "image": "assets/home.quickEntries.04.image.png" },
+        { "slot": "05", "name": "超级补贴", "image": "assets/home.quickEntries.05.image.png" },
+        { "slot": "07", "image": "assets/home.quickEntries.07.image.png" },
+        { "slot": "08", "image": "assets/home.quickEntries.08.image.png" },
+        { "slot": "09", "image": "assets/home.quickEntries.09.image.png" },
+        { "slot": "10", "image": "assets/home.quickEntries.10.image.png" }
+      ]
+    },
+    "tofuBlocks": { "slots": [] },
+    "waistBanners": [],
+    "productRecommendation": { "mode": "preserve-existing" }
+  },
+  "note": "金刚区编号不连续（缺 06），违反连续编号 06-25 规则"
+}

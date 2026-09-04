@@ -1,0 +1,20 @@
+{
+  "schema": "design-package.schema.json",
+  "fixture": {
+    "packageRoot": "design-package",
+    "designBriefId": "brief-001",
+    "sourceCommit": "abc1234",
+    "files": [
+      { "path": "prototype.png", "kind": "prototype.png", "sha256": "a7230805750d5b6731760b0bb4ed54bb305692369f8bc0059e868e7bf3d06f31" },
+      { "path": "prototype.html", "kind": "prototype.html" },
+      { "path": "assets/home-hero.png", "kind": "asset", "sha256": "a7230805750d5b6731760b0bb4ed54bb305692369f8bc0059e868e7bf3d06f31" },
+      { "path": "design-brief.json", "kind": "design-brief.json" },
+      { "path": "component-usage.json", "kind": "component-usage.json" },
+      { "path": "validation-report.json", "kind": "validation-report.json" }
+    ],
+    "skillDependencies": [
+      { "id": "skill-alipay-home", "version": "0.1.0" },
+      { "id": "skill-image-generate", "version": "0.1.0" }
+    ]
+  }
+}

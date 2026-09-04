@@ -1,0 +1,27 @@
+:root {
+  --canvas-width: 375px;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --page-bg: #f5f6f4;
+  --home-top-bg: #26385c;
+  --surface: #ffffff;
+  --text-primary: #20252b;
+  --text-strong: #333333;
+  --text-secondary: #9198a2;
+  --home-accent: #f5e000;
+  --landing-accent: #1e5a45;
+  --landing-page-bg: #5a64c1;
+  --price: #ee2d00;
+  --coupon: #c54931;
+  --coupon-soft: #fff2e9;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-7: 7px;
+  --radius-8: 8px;
+  --radius-15: 15px;
+  --shadow-card: 0 1px 4px rgba(26, 35, 48, 0.07);
+}

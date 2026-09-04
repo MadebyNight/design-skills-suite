@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "http://schemas.design-agent.local/design-skill/v1/alipay-home-config.schema.json",
+  "title": "AlipayHomeConfig",
+  "schemaVersion": "1.0.0",
+  "description": "alipay-home-config/v1：首页交付的唯一配置合同。静态原型、素材包与配置建议均由此派生。严格 Schema，禁止未定义字段；不含 jumpUrl、发布状态、缓存状态、生成过程日志或生产兼容性标记。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "homeTheme",
+    "landingThemes",
+    "searchBar",
+    "carousel",
+    "quickEntries",
+    "tofuBlocks",
+    "waistBanners",
+    "productRecommendation"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": "alipay-home-config/v1"
+    },
+    "homeTheme": {
+      "description": "首页宽泛主题，决定整页视觉风格。",
+      "type": "string",
+      "minLength": 1
+    },
+    "landingThemes": {
+      "description": "上层编排器传入或默认的落地页主题列表，决定轮播图与腰封的内容主题。",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["landingKey", "theme", "source"],
+        "properties": {
+          "landingKey": {
+            "description": "任务内稳定的非生产标识，如 landing-01。",
+            "type": "string",
+            "pattern": "^landing-[0-9]{2,}$"
+          },
+          "theme": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "enum": ["orchestrator", "default"]
+          }
+        }
+      }
+    },
+    "searchBar": {
+      "$ref": "#/$defs/searchBar"
+    },
+    "carousel": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/carouselItem"
+      }
+    },
+    "quickEntries": {
+      "$ref": "#/$defs/quickEntries"
+    },
+    "tofuBlocks": {
+      "$ref": "#/$defs/tofuBlocks"
+    },
+    "waistBanners": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/waistBannerItem"
+      }
+    },
+    "productRecommendation": {
+      "description": "商品推荐固定保留既有内容，不写入商品、商品图、文案、排序或生成数据。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {
+          "const": "preserve-existing"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "landingPreviewRef": {
+      "description": "指向包内对应 landingKey 落地页原型的相对路径，仅用于离线预览，不等同于生产跳转。",
+      "type": "string",
+      "minLength": 1,
+      "$comment": "禁止反斜杠与 .. 路径段（正向前瞻实现，验证器子集无 not 关键字）。",
+      "pattern": "^(?!(?:.*[/\\\\])?\\.\\.(?:/|$))[^\\\\]+$"
+    },
+    "jumpIntent": {
+      "description": "仅当用户明确提出生产跳转需求时记录的待确认跳转意图；最终 jumpUrl 由业务系统或运营确认。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["targetType", "params"],
+      "properties": {
+        "targetType": {
+          "type": "string",
+          "minLength": 1
+        },
+        "params": {
+          "type": "object"
+        }
+      }
+    },
+    "searchBar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["placeholderText", "topBarBackgroundColor", "inputBackgroundColor", "inputButtonBackgroundColor", "topBarCornerRadiusRpx", "inputCornerRadiusRpx"],
+      "properties": {
+        "placeholderText": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20
+        },
+        "topBarBackgroundColor": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "inputBackgroundColor": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "inputButtonBackgroundColor": {
+          "$ref": "#/$defs/hexColor"
+        },
+        "topBarCornerRadiusRpx": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 44
+        },
+        "inputCornerRadiusRpx": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 34
+        }
+      }
+    },
+    "carouselItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["image"],
+      "properties": {
+        "image": {
+          "$ref": "#/$defs/relativeAssetPath"
+        },
+        "contentTheme": {
+          "description": "本条内容对应的落地页主题。",
+          "type": "string",
+          "minLength": 1
+        },
+        "landingKey": {
+          "type": "string",
+          "pattern": "^landing-[0-9]{2,}$"
+        },
+        "landingPreviewRef": {
+          "$ref": "#/$defs/landingPreviewRef"
+        },
+        "jumpIntent": {
+          "$ref": "#/$defs/jumpIntent"
+        }
+      }
+    },
+    "quickEntries": {
+      "description": "金刚区：5–25 个项目且始终是 5 的倍数；静态原型五列多行。前 5 项保留样例名称与顺序；新增项只用连续编号 06–25 且不生成名称。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["entries"],
+      "properties": {
+        "entries": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 25,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["slot", "image"],
+            "properties": {
+              "slot": {
+                "description": "01–25 连续编号。",
+                "type": "string",
+                "pattern": "^(0[1-9]|1[0-9]|2[0-5])$"
+              },
+              "name": {
+                "description": "仅前 5 项允许携带样例名称。",
+                "type": "string",
+                "minLength": 1
+              },
+              "image": {
+                "$ref": "#/$defs/relativeAssetPath"
+              }
+            }
+          }
+        }
+      }
+    },
+    "tofuBlocks": {
+      "description": "豆腐块：固定恰好 3 个槽位（左主图 + 右上 + 右下），只生成图片，不生成文案。",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slots"],
+      "properties": {
+        "slots": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["slot", "image"],
+            "properties": {
+              "slot": {
+                "type": "string",
+                "enum": ["01", "02", "03"]
+              },
+              "image": {
+                "$ref": "#/$defs/relativeAssetPath"
+              }
+            }
+          }
+        }
+      }
+    },
+    "waistBannerItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["image"],
+      "properties": {
+        "image": {
+          "$ref": "#/$defs/relativeAssetPath"
+        },
+        "contentTheme": {
+          "description": "本条内容对应的落地页主题。",
+          "type": "string",
+          "minLength": 1
+        },
+        "landingKey": {
+          "type": "string",
+          "pattern": "^landing-[0-9]{2,}$"
+        },
+        "landingPreviewRef": {
+          "$ref": "#/$defs/landingPreviewRef"
+        },
+        "jumpIntent": {
+          "$ref": "#/$defs/jumpIntent"
+        }
+      }
+    },
+    "hexColor": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "relativeAssetPath": {
+      "description": "素材包内相对路径，不引入 assetId、系统资源 ID 或 Base64。",
+      "type": "string",
+      "minLength": 1,
+      "$comment": "禁止反斜杠与 .. 路径段（正向前瞻实现，验证器子集无 not 关键字）。",
+      "pattern": "^(?!(?:.*[/\\\\])?\\.\\.(?:/|$))[^\\\\]+$"
+    }
+  }
+}

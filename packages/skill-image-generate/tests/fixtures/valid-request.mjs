@@ -1,0 +1,16 @@
+// 测试用 AssetRequest fixture。
+export const validRequest = {
+  id: 'asset-req-001',
+  usageSlot: 'home.hero.image',
+  theme: '绿色蜥蜴猫在公园中，横幅构图',
+  targetWidth: 1920,
+  targetHeight: 380,
+  aspectRatio: '1920:380',
+  format: 'png',
+  fit: 'cover',
+  safeArea: '重要内容位于中央安全区',
+  referenceImages: [],
+  forbiddenContent: ['文字水印', 'logo'],
+  allowGenerate: true,
+  allowEdit: true,
+}

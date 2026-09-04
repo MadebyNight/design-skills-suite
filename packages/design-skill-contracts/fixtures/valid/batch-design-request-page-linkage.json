@@ -1,0 +1,56 @@
+{
+  "schema": "batch-design-request.schema.json",
+  "fixture": {
+    "schemaVersion": "1",
+    "batchId": "batch-2026-08-31.001",
+    "pageLinkage": {
+      "homeTheme": "夏日出游租赁",
+      "landingThemes": [
+        { "theme": "夏日出游租赁" },
+        { "theme": "演唱会租赁" }
+      ]
+    },
+    "items": [
+      {
+        "itemId": "item.landing.001",
+        "brief": {
+          "id": "brief-land-001",
+          "goal": "为夏日出游租赁主题设计落地页",
+          "deliverableType": "alipay.landing",
+          "audience": "城市年轻用户",
+          "brandConstraints": [],
+          "contentRequirements": [],
+          "visualConstraints": [],
+          "outputSpec": { "width": 375, "height": 812 },
+          "inputArtifacts": [],
+          "researchPolicy": "none",
+          "forbiddenChanges": []
+        },
+        "assetPolicy": {
+          "default": { "source": "generate", "requirement": "required" },
+          "rules": []
+        }
+      },
+      {
+        "itemId": "item.home.001",
+        "brief": {
+          "id": "brief-home-001",
+          "goal": "为暑期促销设计一个支付宝小程序首页",
+          "deliverableType": "alipay.home",
+          "audience": "25-35 岁城市年轻用户",
+          "brandConstraints": ["只允许使用现有首页组件"],
+          "contentRequirements": ["突出暑期优惠"],
+          "visualConstraints": ["保持清新色调"],
+          "outputSpec": { "width": 375, "height": 812 },
+          "inputArtifacts": [],
+          "researchPolicy": "optional",
+          "forbiddenChanges": []
+        },
+        "assetPolicy": {
+          "default": { "source": "generate", "requirement": "required" },
+          "rules": []
+        }
+      }
+    ]
+  }
+}

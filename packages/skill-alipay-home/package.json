@@ -1,0 +1,16 @@
+{
+  "name": "skill-alipay-home",
+  "private": true,
+  "version": "0.1.0",
+  "description": "支付宝首页设计 Skill：接收 DesignBrief，只消费 home catalog，受控组装输出完整 DesignPackage。",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "bin": {
+    "home-design": "bin/home-design.mjs"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.mjs\""
+  }
+}

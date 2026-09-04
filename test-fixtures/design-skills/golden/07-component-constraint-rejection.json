@@ -1,0 +1,54 @@
+{
+  "taskId": "golden-07",
+  "title": "约束拒绝任务：用户要求修改按钮圆角或新增组件时，Skill 必须拒绝",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/design-brief.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/design-package.schema.json"
+  ],
+  "input": {
+    "schema": "design-brief.schema.json",
+    "brief": {
+      "id": "golden-07-brief",
+      "goal": "设计一个首页，但用户要求把按钮圆角从 8px 改为 24px，并新增一个倒计时组件",
+      "deliverableType": "alipay.home",
+      "audience": "用户",
+      "brandConstraints": ["只允许使用现有首页组件", "禁止修改 tokens"],
+      "contentRequirements": ["保留基础首页结构"],
+      "visualConstraints": ["保持现有风格"],
+      "outputSpec": { "width": 375, "height": 812, "format": "png" },
+      "inputArtifacts": [],
+      "researchPolicy": "none",
+      "forbiddenChanges": [
+        "修改按钮圆角（8rpx→24rpx）",
+        "新增倒计时组件",
+        "修改 tokens",
+        "新增 class",
+        "引入远程资源"
+      ]
+    }
+  },
+  "requiredCapabilities": ["page.alipay.home.design"],
+  "expectedArtifacts": [
+    {
+      "kind": "rejection",
+      "schema": null,
+      "count": 1,
+      "pathPattern": null
+    }
+  ],
+  "strongAssertions": [
+    "用户要求的圆角修改和新增组件被拒绝，不实际修改 DOM/CSS/tokens",
+    "拒绝属于结构化结果，不表现为脚本崩溃",
+    "给出一个现有组件范围内的替代方案",
+    "组件库源仓库未被修改（git status 干净）",
+    "输出明确说明拒绝原因"
+  ],
+  "allowedDifferences": [
+    "替代方案的具体内容可由实现给出",
+    "是否额外输出 partial DesignPackage 可由实现决定"
+  ],
+  "failurePolicy": {
+    "type": "constraint",
+    "onViolation": "拒绝并给出现有组件范围内的替代方案，不静默绕过约束"
+  }
+}

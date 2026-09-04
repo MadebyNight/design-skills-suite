@@ -1,0 +1,20 @@
+{
+  "schema": "design-guidance.schema.json",
+  "fixture": {
+    "items": [
+      {
+        "sourceSkill": "ui-ux-pro-max",
+        "sourceSkillVersion": "2.1.0",
+        "kind": "color",
+        "content": "主色建议使用浅蓝色营造清新感",
+        "catalogAccepted": true,
+        "rejectionReason": null
+      }
+    ],
+    "catalogCompatibility": {
+      "sourceCommit": "abc1234",
+      "compatible": true,
+      "rejectedCount": 0
+    }
+  }
+}

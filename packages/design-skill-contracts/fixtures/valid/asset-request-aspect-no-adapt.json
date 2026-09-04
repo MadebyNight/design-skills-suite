@@ -1,0 +1,25 @@
+{
+  "schema": "asset-request.schema.json",
+  "fixture": {
+    "id": "asset-req-102",
+    "usageSlot": "landing.hero.image",
+    "theme": "夏日出游租赁 hero 图",
+    "targetWidth": 1500,
+    "targetHeight": 720,
+    "aspectRatio": "1500:720",
+    "format": "png",
+    "fit": "cover",
+    "safeArea": "重要内容位于中央安全区",
+    "referenceImages": [],
+    "forbiddenContent": ["文字水印", "logo"],
+    "allowGenerate": true,
+    "allowEdit": true,
+    "acceptance": {
+      "mode": "aspect-ratio"
+    },
+    "retryPolicy": {
+      "generateMaxAttempts": 1,
+      "adaptMaxAttempts": 0
+    }
+  }
+}

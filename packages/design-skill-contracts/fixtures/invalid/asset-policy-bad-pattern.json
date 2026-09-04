@@ -1,0 +1,17 @@
+{
+  "schema": "asset-policy.schema.json",
+  "fixture": {
+    "default": {
+      "source": "generate",
+      "requirement": "required"
+    },
+    "rules": [
+      {
+        "usageSlot": "home*hero",
+        "source": "reuse",
+        "requirement": "optional"
+      }
+    ]
+  },
+  "note": "usageSlot 中间出现 *，pattern 应拒绝"
+}

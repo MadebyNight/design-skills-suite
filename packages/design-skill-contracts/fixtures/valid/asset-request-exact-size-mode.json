@@ -1,0 +1,21 @@
+{
+  "schema": "asset-request.schema.json",
+  "fixture": {
+    "id": "asset-req-103",
+    "usageSlot": "home.quickentry.item-01.icon",
+    "theme": "绿色蜥蜴猫伞兵图标，200x200",
+    "targetWidth": 200,
+    "targetHeight": 200,
+    "aspectRatio": "1:1",
+    "format": "png",
+    "fit": "cover",
+    "safeArea": "主体居中，四周留白",
+    "referenceImages": [],
+    "forbiddenContent": ["文字水印", "logo"],
+    "allowGenerate": true,
+    "allowEdit": true,
+    "acceptance": {
+      "mode": "exact-size"
+    }
+  }
+}

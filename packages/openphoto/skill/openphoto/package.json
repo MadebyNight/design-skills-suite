@@ -1,0 +1,26 @@
+{
+  "name": "openphoto",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": { "node": ">=22.0.0" },
+  "files": [
+    "SKILL.md",
+    "manifest.json",
+    "agents",
+    "bin",
+    "runtime",
+    "assets",
+    "manifests",
+    "references"
+  ],
+  "bin": { "openphoto": "./bin/openphoto.mjs" },
+  "scripts": {
+    "test:unit": "node --test tests/unit/*.test.mjs",
+    "test:e2e": "playwright test --config tests/playwright.config.mjs",
+    "test:e2e:real-ai": "playwright test --config tests/playwright.config.mjs --grep \"real local AI\"",
+    "test": "npm run test:unit && npm run test:e2e"
+  },
+  "dependencies": { "playwright-core": "1.54.0" },
+  "devDependencies": { "@playwright/test": "1.54.0" }
+}

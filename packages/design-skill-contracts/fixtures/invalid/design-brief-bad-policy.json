@@ -1,0 +1,17 @@
+{
+  "schema": "design-brief.schema.json",
+  "fixture": {
+    "id": "brief-bad",
+    "goal": "设计一个落地页",
+    "deliverableType": "alipay.landing",
+    "audience": "用户",
+    "brandConstraints": [],
+    "contentRequirements": [],
+    "visualConstraints": [],
+    "outputSpec": { "width": 375, "height": 812 },
+    "inputArtifacts": [],
+    "researchPolicy": "always-must",
+    "forbiddenChanges": []
+  },
+  "note": "researchPolicy 非法枚举值"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "skill-image-generate",
+  "private": true,
+  "version": "0.1.0",
+  "description": "生图 Skill：接收结构化 AssetRequest，生成初始图片并输出 AssetResult。支持 fal.ai 与 OpenAI-compatible 图片 provider。",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "bin": {
+    "image-generate": "bin/image-generate.mjs"
+  },
+  "scripts": {
+    "test": "node --test \"tests/**/*.test.mjs\""
+  },
+  "dependencies": {
+    "@fal-ai/client": "^1.10.0"
+  }
+}

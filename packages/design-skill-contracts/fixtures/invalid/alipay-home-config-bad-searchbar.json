@@ -1,0 +1,22 @@
+{
+  "schema": "alipay-home-config.schema.json",
+  "fixture": {
+    "schemaVersion": "alipay-home-config/v1",
+    "homeTheme": "夏日出游租赁",
+    "landingThemes": [],
+    "searchBar": {
+      "placeholderText": "夏日出游装备一站租赁超值优惠推荐",
+      "topBarBackgroundColor": "#FFFFFF",
+      "inputBackgroundColor": "#F5F5F5",
+      "inputButtonBackgroundColor": "#1677FF",
+      "topBarCornerRadiusRpx": 44,
+      "inputCornerRadiusRpx": 34
+    },
+    "carousel": [],
+    "quickEntries": { "entries": [] },
+    "tofuBlocks": { "slots": [] },
+    "waistBanners": [],
+    "productRecommendation": { "mode": "preserve-existing" }
+  },
+  "note": "searchBar.placeholderText 超过 20 字上限"
+}

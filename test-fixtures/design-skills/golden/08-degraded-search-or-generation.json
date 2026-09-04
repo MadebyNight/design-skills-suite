@@ -1,0 +1,50 @@
+{
+  "taskId": "golden-08",
+  "title": "降级任务：搜索或生图失败时，明确失败步骤，按策略继续或终止，不得伪造成功",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/design-brief.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/design-package.schema.json"
+  ],
+  "input": {
+    "schema": "design-brief.schema.json",
+    "brief": {
+      "id": "golden-08-brief",
+      "goal": "设计一个首页，假设搜索服务不可用且生图失败，验证降级行为",
+      "deliverableType": "alipay.home",
+      "audience": "用户",
+      "brandConstraints": ["只允许使用现有首页组件"],
+      "contentRequirements": ["完成基础首页结构"],
+      "visualConstraints": ["保持现有风格"],
+      "outputSpec": { "width": 375, "height": 812, "format": "png" },
+      "inputArtifacts": [],
+      "researchPolicy": "optional",
+      "forbiddenChanges": ["修改按钮圆角", "新增组件", "修改 tokens"]
+    }
+  },
+  "requiredCapabilities": ["page.alipay.home.design", "research.search", "image.generate"],
+  "expectedArtifacts": [
+    {
+      "kind": "design-package",
+      "schema": "design-package.schema.json",
+      "count": 1,
+      "pathPattern": "design-package/"
+    }
+  ],
+  "strongAssertions": [
+    "搜索失败（optional）时记录 warning 后继续，不伪造来源",
+    "生图失败时明确失败步骤，不伪造 AssetResult",
+    "缺图时输出结构化 AssetRequest，标注待补素材",
+    "不静默声称已使用搜索结果或已生成图片",
+    "整体结果为结构化结果，包含失败步骤记录"
+  ],
+  "allowedDifferences": [
+    "当可继续时输出含待补素材的 DesignPackage",
+    "当策略为阻断时输出 unsupported/failed 结构化结果"
+  ],
+  "failurePolicy": {
+    "type": "degraded",
+    "onOptionalSearchFailed": "记录 warning 后继续，不阻断",
+    "onRequiredGenerationFailed": "明确阻断并说明缺失",
+    "onUnavailableCapability": "标记该 capability unavailable 并按 researchPolicy 降级或阻断"
+  }
+}

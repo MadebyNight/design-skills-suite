@@ -1,0 +1,57 @@
+{
+  "taskId": "golden-05",
+  "title": "首页完整任务：自动搜索、生成素材、精确适配并导出原型",
+  "referencedSchemas": [
+    "http://schemas.design-agent.local/design-skill/v1/design-brief.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/research-pack.schema.json",
+    "http://schemas.design-agent.local/design-skill/v1/design-package.schema.json"
+  ],
+  "input": {
+    "schema": "design-brief.schema.json",
+    "brief": {
+      "id": "golden-05-brief",
+      "goal": "为新品上市设计一个完整的支付宝小程序首页，自动搜索灵感、生成素材并精确适配导出原型",
+      "deliverableType": "alipay.home",
+      "audience": "18-30 岁潮流年轻用户",
+      "brandConstraints": ["只允许使用现有首页组件", "禁止新增 class", "禁止内联样式"],
+      "contentRequirements": ["突出新品上市", "信息层级清晰", "包含主视觉素材"],
+      "visualConstraints": ["潮流潮流撞色", "视觉冲击力强"],
+      "outputSpec": { "width": 375, "height": 812, "format": "png" },
+      "inputArtifacts": [],
+      "researchPolicy": "required",
+      "forbiddenChanges": ["修改按钮圆角", "新增组件", "修改 tokens", "引入远程资源"]
+    }
+  },
+  "requiredCapabilities": ["page.alipay.home.design", "research.search", "image.generate", "image.resize", "image.crop", "image.export"],
+  "expectedArtifacts": [
+    {
+      "kind": "design-package",
+      "schema": "design-package.schema.json",
+      "count": 1,
+      "pathPattern": "design-package/"
+    },
+    {
+      "kind": "research-pack",
+      "schema": "research-pack.schema.json",
+      "count": 1
+    }
+  ],
+  "strongAssertions": [
+    "输出合法 DesignPackage 且通过 schema 校验",
+    "存在 research-pack.json 且通过 research-pack.schema.json 校验",
+    "ResearchPack 来源可追溯（每个 source 含 url/title/snippet）",
+    "生图与编辑能力产出 AssetResult 并回填",
+    "最终素材严格尺寸满足（1920×380 hero 等）",
+    "所有 class/variant 在白名单内，无远程资源无 script"
+  ],
+  "allowedDifferences": [
+    "搜索 query 集可在有限范围内变化",
+    "素材生成像素内容可不同",
+    "研究信号是否被采纳可由实现决定，但必须记录原因"
+  ],
+  "failurePolicy": {
+    "type": "research_and_page",
+    "onSearchRequiredFailed": "明确阻断并说明缺失，不伪造来源",
+    "onGenerationFailed": "记录失败步骤，按策略继续或终止，不伪造成功"
+  }
+}
