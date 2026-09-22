@@ -4,6 +4,12 @@
 
 > **范围约束**：本 package 只提供 `image.generate`，不负责裁切、缩放或页面编排。支持 fal.ai 与 OpenAI-compatible 图片 provider；固定 PNG provider 仅用于显式测试。
 
+## 用户引导
+
+用户询问用途或怎么使用时，说明本 Skill 根据用途、主题和目标尺寸生成初始图片，输出图片文件及真实尺寸等结果；不做页面组装或本地裁切。仅咨询时不探测 provider、不生成图片。
+
+示例：“生成一张 1404×600 的夏日出游横幅素材，主体居中，两侧留出裁切空间。”由 Agent 将已知用途、尺寸、风格及可选参考图整理成 AssetRequest，仅询问影响结果的缺项。执行前说明 provider 和真实生图可能产生的费用，按会话授权执行；测试图片不能当作主题成果。交付时提供真实图片路径和尺寸，尺寸不符时说明是否仍需 OpenPhoto 适配。页面设计及自动回填交给页面 Skill 与编排器。套件流程见[使用指南](../../docs/usage/design-skills-user-guide.md#新用户使用流程)。
+
 ## 能力
 
 - 提供能力 `image.generate`（ID 冻结于 `design-skill-contracts`）。

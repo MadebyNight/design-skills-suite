@@ -4,6 +4,14 @@
 
 > **范围约束**：这是受控 Node 工具链实现，**不做自由视觉设计**。只允许在现有 8 类首页组件上做最小自然中文文本替换和图片回填，不新增 DOM、class、style 或 script；商品推荐固定 `preserve-existing`。
 
+## 用户引导
+
+用户询问用途或怎么使用时，先说明：本 Skill 在既有六模块内设计支付宝首页，交付静态原型、素材请求或已回填素材、设计配置和运营建议，用于评审与交接，不负责生产发布。仅咨询时不执行 CLI。
+
+可给用户示例：“设计一个夏日出游首页，面向年轻租赁用户，清爽蓝色风格。”从上下文提取主题、数量及可选受众、品牌要求，不要求用户手写 DesignBrief；由 Agent 整理并校验。明确需求后沿用下面的执行流程，不重复介绍。
+
+缺图时独立调用返回 `completed_with_pending_assets`；需要自动生图与回填时转入 `skill-orchestrator`，单页也可编排。活动落地页交给 `skill-alipay-landing`。交付时给出 `prototype.html` 和 `configuration-guide.md` 的实际路径，说明待补素材与业务资源，不把快照预览称为完整素材交付。套件通用流程见[使用指南](../../docs/usage/design-skills-user-guide.md#新用户使用流程)。
+
 ## 规划与询问
 
 本 Skill 自行做与本次首页生成直接相关的短计划，不调用外部通用 `brainstorming` Skill。页面类型、主题和数量明确时静默执行；仅当表述不明确、要求冲突，或必须明显扩展范围时询问用户。批量交付的目录和请求文件命名由 `skill-orchestrator name` 统一分配。

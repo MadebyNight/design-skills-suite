@@ -21,6 +21,7 @@ import { createStandardBatchRuntime } from '../runtime/standard-bindings.mjs'
 const exec = promisify(execFile)
 
 const USAGE = `用法:
+  design-batch --help
   design-batch name --output-root DIR --theme-abbr SLUG
   design-batch run --request FILE --output DIR [--screenshot] [--source-commit X]
   design-batch resume --output DIR [--screenshot] [--source-commit X]
@@ -109,6 +110,16 @@ export function exitCodeFor(code) {
 }
 
 export async function main() {
+  const argv = process.argv.slice(2)
+  if (argv.length === 1 && ['--help', '-h', 'help'].includes(argv[0])) {
+    return {
+      description: '支付宝页面视觉设计批次：自动生成与回填素材、多页交付、离线预览和失败恢复；不负责生产发布。',
+      usage: USAGE,
+      guide: 'docs/usage/design-skills-user-guide.md',
+      input: 'run 接收结构化请求 JSON；自然语言需求由 Agent 按 SKILL.md 整理。',
+      output: '交付后打开结果返回的 index.html，并查看各页面 configuration-guide.md。',
+    }
+  }
   const { command, positional, flags } = parseArgs(process.argv.slice(2))
   if (flags.unknown) {
     throw Object.assign(new Error(`未知参数 ${flags.unknown}`), { code: 'BATCH_USAGE' })

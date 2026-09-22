@@ -23,6 +23,25 @@ function todayStamp(now = new Date()) {
   return [now.getFullYear(), String(now.getMonth() + 1).padStart(2, '0'), String(now.getDate()).padStart(2, '0')].join('')
 }
 
+test('帮助入口：无 provider、请求或输出参数时成功返回单行 JSON', async () => {
+  for (const arg of ['--help', '-h', 'help']) {
+    const { stdout, stderr } = await runCli([arg], { IMAGE_GENERATE_PROVIDER: 'invalid-provider' })
+    const parsed = JSON.parse(stdout)
+    assert.equal(parsed.ok, true)
+    assert.equal(typeof parsed.result.usage, 'string')
+    assert.ok(parsed.result.usage.includes('run --request'))
+    assert.equal(stdout.trim().split('\n').length, 1)
+    assert.equal(stderr, '')
+  }
+})
+
+test('帮助入口不吞掉混入的执行参数', async () => {
+  await assert.rejects(
+    () => runCli(['--help', '--request', 'missing.json']),
+    (error) => error.code === 2 && JSON.parse(error.stdout).code === 'BATCH_USAGE',
+  )
+})
+
 test('name：日期在前、主题缩写居中，目录与请求文件共享版本并自动递增', async () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'cli-name-'))
   const date = todayStamp()

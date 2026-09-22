@@ -7,6 +7,12 @@ description: "Use for deterministic local image editing with OpenPhoto: inspect 
 
 Run every command from this Skill's root directory (the directory containing `SKILL.md`).
 
+## 用户引导
+
+用户询问用途或怎么使用时，说明 OpenPhoto 可处理已有本地图片，例如检查、裁切、缩放与导出；具体可用操作以运行时能力清单为准。仅咨询时无需启动 CLI 或安装模型。
+
+示例：“把指定的本地图片居中裁切为 1:1，缩放至 200×200 并导出 PNG。”执行需求至少包含文件路径和处理目标，由 Agent 整理请求，只补问影响结果的缺项。交付时提供实际导出文件路径、尺寸和格式。不要把图片处理描述为新图生成或页面发布；在 design-skills-suite 中，新图生成由 `skill-image-generate` 负责，页面素材自动回填由 `skill-orchestrator` 负责。独立安装 OpenPhoto 时不依赖这些套件 Skill。
+
 ## Install and Runtime Prerequisites
 
 1. Place this complete Skill directory in a Skills directory recognized by the host Agent. If that host discovers Skills only at session startup, restart it or open a new session after installation.
