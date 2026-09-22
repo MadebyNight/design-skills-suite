@@ -4,6 +4,14 @@
 
 > **范围约束**：这是受控 Node 工具链实现，**不做自由视觉设计**。只允许在 landing-config（landing-schema/v1）的七类白名单模块内受控重组页面，不新增 DOM、class、style 或 script。
 
+## 用户引导
+
+用户询问用途或怎么使用时，先说明：本 Skill 在七类白名单模块内设计活动落地页，交付静态原型、素材请求或已回填素材、设计配置和运营建议，减少页面组装工作，不负责真实商品、优惠券或发布。仅咨询时不执行 CLI。
+
+可给用户示例：“设计一个开学季活动落地页，面向大学生，绿色清新风格。”从上下文提取主题、数量及可选模块诉求、受众和品牌要求，由 Agent 整理并校验 DesignBrief，不向用户展示完整 Schema 问卷。明确需求后直接沿用执行流程。
+
+缺图时独立调用返回 `completed_with_pending_assets`；需要自动生图与回填或多页联动时使用 `skill-orchestrator`。首页设计交给 `skill-alipay-home`。交付时提供 `prototype.html` 和 `configuration-guide.md` 的实际路径，说明待补素材和业务资源，不将离线效果称为发布完成。套件通用流程见[使用指南](../../docs/usage/design-skills-user-guide.md#新用户使用流程)。
+
 ## 规划与询问
 
 本 Skill 自行做与本次落地页生成直接相关的短计划，不调用外部通用 `brainstorming` Skill。页面类型、主题和数量明确时静默执行；仅当表述不明确、要求冲突，或必须明显扩展范围时询问用户。批量交付的目录和请求文件命名由 `skill-orchestrator name` 统一分配。
